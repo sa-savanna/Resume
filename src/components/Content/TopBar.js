@@ -29,13 +29,11 @@ const TopBar = () => {
         <Header header={data.header} paragraph={data.paragraph} name={data.name} />
         <div className={css.aboutme}>
           <p>
-            Passionately and with enthusiasm I am taking the career path in the IT sector as a web-developer. <br />
+            As a results-driven young web-developer, I am strengthening my front-end skills, getting into visualisation and animation.
+            </p>
+          <p>  At the same time, I am learning back-end to grow knowledge in all stages of development.
           </p>
-          <p>
-            I am strengthening my front-end skills, getting into visualisation and animation. <br />
-              At the same time, I am learning back-end to grow knowledge in all stages of development.
-              </p>
-          <p><strong>I am a web-developer for:</strong></p>
+          <p><strong>I am a developer for:</strong></p>
           <div className={css.countup}>
             <span className={`${css.timeel} year`}>{countYear()}</span>
             <span className={`${css.timeel} ${css.timeRef}`}>year<small>(s)</small> </span>
