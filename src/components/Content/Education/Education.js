@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 
 const Education = () => {
     const [isVisible, setVisibility] = useState(null)
+    
     function toggle() {
         setVisibility(!isVisible);
     }
