@@ -1,6 +1,5 @@
 import React from 'react'
 import { FaCircle } from 'react-icons/fa';
-import { Table } from 'react-bootstrap';
 import { Fragment } from 'react';
 import css from "../topBar.module.css"
 
@@ -8,79 +7,54 @@ const TableLang = () => {
     return (
         <Fragment>
             <div className={css.bodyLang}>
-                <span className={css.headLang}>Languages</span>
-                <Table borderless className={css.tableLang}>
-                    <tbody>
-                        <tr>
-                            <td>English</td>
-                            <td>
-                                <span>
-                                    <FaCircle style={{ color: '#007bff' }} />
-                                    <FaCircle style={{ color: '#007bff' }} />
-                                    <FaCircle style={{ color: '#007bff' }} />
-                                    <FaCircle style={{ color: '#007bff' }} />
-                                    <FaCircle />
-                                    <FaCircle />
+                <div>
+                    <span className={css.headLang}>Languages</span>
+                    <div className={css.tableLang}>
+                        <p>English</p>
+                        <span>
+                            <FaCircle style={{ color: '#007bff' }} />
+                            <FaCircle style={{ color: '#007bff' }} />
+                            <FaCircle style={{ color: '#007bff' }} />
+                            <FaCircle style={{ color: '#007bff' }} />
+                            <FaCircle />
+                            <FaCircle />
+                        </span>
+                        <p>French</p>
+                        <span>
+                            <FaCircle style={{ color: '#007bff' }} />
+                            <FaCircle style={{ color: '#007bff' }} />
+                            <FaCircle style={{ color: '#007bff' }} />
+                            <FaCircle />
+                            <FaCircle />
+                            <FaCircle />
+                        </span>
+                        <p>Dutch</p>
+                        <span>
+                            <FaCircle style={{ color: '#007bff' }} />
+                            <FaCircle style={{ color: '#007bff' }} />
+                            <FaCircle />
+                            <FaCircle />
+                            <FaCircle />
+                            <FaCircle />
+                        </span>
+                        <p>Russian, Ukranian</p>
+                        <span>
+                            Native
+                        </span>
+                    </div>
 
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>French</td>
-                            <td>
-                                <span>
-                                    <FaCircle style={{ color: '#007bff' }} />
-                                    <FaCircle style={{ color: '#007bff' }} />
-                                    <FaCircle style={{ color: '#007bff' }} />
-                                    <FaCircle />
-                                    <FaCircle />
-                                    <FaCircle />
-                                </span>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>Dutch</td>
-                            <td>
-                                <span>
-                                    <FaCircle style={{ color: '#007bff' }} />
-                                    <FaCircle style={{ color: '#007bff' }} />
-                                    <FaCircle />
-                                    <FaCircle />
-                                    <FaCircle />
-                                    <FaCircle />
-                                </span>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>Russian</td>
-                            <td><span>
-                                <FaCircle style={{ color: '#007bff' }} />
-                                <FaCircle style={{ color: '#007bff' }} />
-                                <FaCircle style={{ color: '#007bff' }} />
-                                <FaCircle style={{ color: '#007bff' }} />
-                                <FaCircle style={{ color: '#007bff' }} />
-                                <FaCircle style={{ color: '#007bff' }} />
-                            </span>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>Ukranian</td>
-                            <td><span>
-                                <FaCircle style={{ color: '#007bff' }} />
-                                <FaCircle style={{ color: '#007bff' }} />
-                                <FaCircle style={{ color: '#007bff' }} />
-                                <FaCircle style={{ color: '#007bff' }} />
-                                <FaCircle style={{ color: '#007bff' }} />
-                                <FaCircle style={{ color: '#007bff' }} />
-                            </span>
-                            </td>
-
-                        </tr>
-                    </tbody>
-                </Table>
+                </div>
+                <div>
+                    <span className={css.headLang}>Info</span>
+                    <div className={css.tableLang}>
+                        <p> Work permit</p>
+                        <span>unlimited</span>
+                        <p> Card residence</p>
+                        <span>till Feb. 2023</span>
+                        <p> Driver licence</p>
+                        <span>category B</span>
+                    </div>
+                </div>
             </div>
         </Fragment>
     )

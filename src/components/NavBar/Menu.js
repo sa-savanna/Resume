@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FiDownload } from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
 import '../../App.css'
 import { Navbar } from 'react-bootstrap';
-import File from "../Content/WebDeveloper_Savchenko_Anna.pdf"
-import { useState } from 'react';
+import File from "../Content/Anna Savchenko_React Developer.pdf"
 
 
 const Menu = () => {

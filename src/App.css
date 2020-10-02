@@ -207,7 +207,7 @@ h1.box-headline.one {
 
 .container2 {
   display: grid;
-  grid-template-areas: "topbar photo" "lang photo" "skills skills" "file file" "footer footer" ;
+  grid-template-areas: "topbar photo" "lang photo" "skills skills" "file file" "footer footer";
   grid-template-columns: 1fr 30%;
   position: relative;
 }
@@ -296,6 +296,7 @@ h1.box-headline.one {
   margin-left: 0;
   margin-bottom: 1em;
   flex: 0 1 21%;
+  overflow-wrap: break-word;
 }
 
 .card-deck .card>svg {
@@ -569,7 +570,7 @@ h1.box-headline.one {
     padding-left: 0;
   }
   .container2 {
-    grid-template-areas: "photo" "topbar" "lang" "skills" "file" "footer" ;
+    grid-template-areas: "photo" "topbar" "lang" "skills" "file" "footer";
     grid-template-columns: 1fr;
   }
   .file {
@@ -580,14 +581,6 @@ h1.box-headline.one {
   #navigation .navbar-toggler-icon {
     background-image: url("https://mdbootstrap.com/img/svg/hamburger3.svg?color=999");
   }
-  /* .col-lg-6 {
-    padding: 0px;
-    padding-right: 5px;
-  }
-  
-  .col-md-6 {
-    padding-left: 0%;
-  } */
   .navbar-collapse {
     background-color: #ffffffba;
     box-shadow: -2px 4px 12px #6c757d;
@@ -618,7 +611,9 @@ h1.box-headline.one {
     flex-direction: row;
     padding-top: 0;
     display: flex;
-    justify-content: space-between;
+  }
+  .card-deck .card {
+    flex: 0 1 33%;
   }
   .jumbotron svg {
     font-size: 3em;
@@ -666,11 +661,9 @@ h1.box-headline.one {
 }
 
 @media only screen and (max-width: 420px) {
-  
   .col-lg-3 {
     padding-left: 0;
   }
-   
   .box {
     width: 10px;
     height: 10px;
@@ -720,6 +713,9 @@ h1.box-headline.one {
     flex-direction: row;
     padding-left: 3%;
     padding-right: 3%;
+  }
+  .card-deck .card {
+    flex: 0 1 50%;
   }
   .jumbotron {
     padding: 0;

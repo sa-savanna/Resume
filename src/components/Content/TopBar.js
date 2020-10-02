@@ -29,9 +29,11 @@ const TopBar = () => {
         <Header header={data.header} paragraph={data.paragraph} name={data.name} />
         <div className={css.aboutme}>
           <p>
-            As a results-driven young web-developer, I am strengthening my front-end skills, getting into visualisation and animation.
-            </p>
-          <p>  At the same time, I am learning back-end to grow knowledge in all stages of development.
+            As a results-driven web-developer, I am improving ReactJS skills, <a href="https://www.mongodb.com/mern-stack" target="_blank" rel="noopener noreferrer">MERN stack</a> . <br />
+            Currently learn animations, motions. <br />
+            Interested in Data visualizing.
+          </p>
+          <p> At the same time, I am learning back-end to grow knowledge in all stages of development.
           </p>
           <p><strong>I am a developer for:</strong></p>
           <div className={css.countup}>

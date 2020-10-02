@@ -54,30 +54,37 @@
     text-transform: uppercase;
     font-weight: 700;
 }
-
+.aboutme a{
+    color: #007bff;
+}
 /*            Table  
 ==================================================*/
 
 .bodyLang {
     grid-area: lang;
     padding-left: 14%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 1em;
 }
 
 .headLang {
     display: block;
     color: #fcc100;
     font-size: 1.5rem;
-    margin-top: 2em;
 }
 
 .tableLang {
-    width: 48%;
-    line-height: 10px;
+    line-height: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: .8em 0;
 }
 
 .tableLang span {
     display: flex;
     flex-wrap: wrap;
+    color: #007bff;
 }
 
 .tableLang svg {
@@ -97,7 +104,7 @@
 }
 
 @media only screen and (max-width: 420px) {
-    .header{
+    .header {
         margin-top: 5em;
     }
     .header h1 {
@@ -122,7 +129,6 @@
         margin-left: 2em;
     }
     .tableLang {
-        width: 50%;
         margin-left: 9%;
     }
     .bodyLang {
@@ -142,8 +148,7 @@
 }
 
 @media only screen and (max-width: 767px) {
-    .tableLang {
-        width: 66%;
+    .bodyLang {
+        grid-template-columns: 1fr;
     }
-   
 }
