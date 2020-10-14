@@ -1,9 +1,9 @@
 import React, { Fragment, useRef, useEffect } from 'react';
-import { Col, Image, Row, Card, CardDeck, Jumbotron } from 'react-bootstrap';
+import { Col, Row, Card, CardDeck, Jumbotron } from 'react-bootstrap';
 import { BsBootstrap } from 'react-icons/bs';
 import { AiOutlineHtml5 } from 'react-icons/ai';
 import { FaFigma, FaSass } from 'react-icons/fa';
-import { DiLinux, DiCss3, DiGithubBadge, DiNodejsSmall, DiMongodb, DiJavascript1, DiNodejs, DiReact, DiVisualstudio } from 'react-icons/di';
+import { DiLinux, DiGithubBadge, DiNodejsSmall, DiMongodb, DiJavascript1, DiNodejs, DiReact, DiVisualstudio } from 'react-icons/di';
 import { ReactComponent as Postman } from './pm-gray-horiz.svg'
 import TopBar from "../TopBar";
 import Education from '../Education/Education'
@@ -63,7 +63,6 @@ const About = () => {
                 <Row className="row-skills pl-0">
                     <Col lg={3} md={3} className="p-0">
                         <span data-text="Skills" className="headLang">Skills</span>
-                        {/* <Image src="https://www.cecimo.eu/wp-content/uploads/2013/09/skills-1024x737.jpg" /> */}
                         <span>SKILLS</span>
                     </Col>
                     <Col lg={9} md={9} className="px-0">
