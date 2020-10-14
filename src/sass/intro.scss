@@ -1,0 +1,103 @@
+.box-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  height: 100vh;
+  justify-items: center;
+
+  .box-headline {
+    font-size: 4.5rem;
+    line-height: 1;
+    color: $dark-color;
+    font-weight: 700;
+    display: flex;
+    align-items: baseline;
+
+    @include medium {
+      font-size: 4rem;
+    }
+
+    @include small {
+      font-size: 3rem;
+    }
+
+    @include Exsmall {
+      font-size: 2rem;
+    }
+
+    .box {
+      background-color: $primary-color;
+      height: 15px;
+      width: 15px;
+      transform-origin: bottom;
+      border-radius: 50%;
+    }
+  }
+
+  p {
+    letter-spacing: 4px;
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin: 0;
+    position: relative;
+    left: 1rem;
+    top: -4rem;
+    font-weight: 600;
+    color: $dimmed-color;
+
+    @include medium {
+      font-size: 3rem;
+    }
+
+    @include small {
+      font-size: 1rem !important;
+      top: -1.5rem !important;
+    }
+
+    @include Exsmall {
+      left: 7%;
+      top: -1rem !important;
+      font-size: 0.7rem !important;
+    }
+  }
+
+  .sub-table {
+    position: absolute;
+    top: 32%;
+    left: 57%;
+
+    @include medium {
+      top: 35%;
+    }
+
+    @include small {
+      top: 70%;
+      left: 32%;
+    }
+
+    @include Exsmall {
+      top: 64%;
+      left: 28%;
+    }
+
+    h5 {
+      letter-spacing: 4px;
+      color: $header-color;
+      line-height: 26px;
+      margin: 0;
+      border-left: 3px solid $primary-color;
+      padding-left: 15px;
+
+      @include medium {
+        letter-spacing: 3px;
+        line-height: 21px;
+        font-size: 1rem;
+      }
+
+      @include Exsmall {
+        line-height: 16px;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

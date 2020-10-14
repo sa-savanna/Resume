@@ -1,0 +1,89 @@
+.row {
+  margin-left: 0;
+
+  .textarea-contact {
+    width: 100%;
+    border: solid 1px #00000033;
+    position: relative;
+  }
+  .input-contact {
+    height: 40px;
+    width: 100%;
+    border: solid 1px #00000033;
+    position: relative;
+    margin-bottom: 30px;
+
+    input[type="text"] {
+      height: 100%;
+      width: 100%;
+      border: 0;
+      padding: 0 20px;
+      float: left;
+      position: relative;
+      background-color: transparent;
+      z-index: 2;
+      font-size: 14px;
+      color: $header-color;
+    }
+  }
+
+  .btn-box {
+    background: $primary-color;
+    padding: 10px 50px;
+    border-radius: 0;
+    color: #fff;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    border-color: $primary-color;
+
+    &:focus,
+    &:hover {
+      background: #f59f00;
+      color: #fff;
+    }
+  }
+
+  .col-left {
+    padding-left: 30px;
+    padding-top: 30px;
+
+    .contact-info {
+      margin-top: 20px;
+      display: grid;
+
+      svg {
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        text-align: center;
+        line-height: 33px;
+        margin-right: 10px;
+        color: $primary-color;
+        font-size: 1.3rem;
+        transition: transform 0.5s ease;
+
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+        line-height: 3rem;
+
+        @include small {
+          font-size: 0.8rem;
+          line-height: 2.5rem;
+        }
+      }
+    }
+  }
+
+  @include small {
+    .col-md-6 {
+      width: 96vw;
+    }
+  }
+}

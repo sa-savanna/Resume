@@ -1,0 +1,51 @@
+@import "config";
+@import "navbar";
+@import "intro";
+@import "about";
+@import "portfolio";
+@import "contact";
+@import "topbar";
+@import "profile";
+
+
+html,
+body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.8;
+  background-color: $background-color;
+  color: $dark-color;
+}
+
+.container-fluid {
+  padding: 0;
+  overflow: hidden;
+}
+a {
+  @include easeOut();
+  color: inherit;
+}
+
+/* typography
+==================================================*/
+
+h1 {
+  font-size: 3.75rem;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $header-color;
+}
+
+h5 {
+  color: $primary-color;
+}
+
+.text-uppercase {
+  line-height: 2;
+  margin-bottom: 30px;
+}

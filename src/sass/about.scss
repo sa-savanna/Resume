@@ -1,0 +1,180 @@
+.container2 {
+  display: grid;
+  grid-template-areas: "topbar photo" "lang photo" "skills skills" "file file" "footer footer";
+  grid-template-columns: 1fr 30%;
+  position: relative;
+
+  @include medium {
+    grid-template-areas: "photo" "topbar" "lang" "skills" "file" "footer";
+    grid-template-columns: 1fr;
+  }
+
+  .row-skills {
+    grid-area: skills;
+    padding: 100px 20px;
+    margin-top: 2em;
+    text-align: center;
+
+    @include large {
+      padding: 5px;
+    }
+
+    .headLang {
+      color: $background-color;
+      font-size: 3rem;
+      font-weight: 500;
+      display: block;
+      background-color: $primary-color;
+      height: 100%;
+
+      padding: 80px 0;
+      text-align: center;
+      text-transform: uppercase;
+      text-rendering: optimizeLegibility;
+      letter-spacing: 0.15em;
+
+      &:before {
+        content: attr(data-text);
+        position: absolute;
+        transform-origin: bottom;
+        transform: rotateX(180deg);
+        perspective: 200px;
+        line-height: 1.1;
+        background: linear-gradient(0deg, $background-color 0, transparent 90%);
+        -webkit-background-clip: text;
+        color: transparent;
+        opacity: 0.5;
+      }
+      @include large {
+        display: none;
+      }
+    }
+
+    img {
+      width: 100%;
+
+      @include large {
+        display: none;
+      }
+    }
+    span {
+      display: none;
+
+      @include large {
+        display: block;
+        margin-bottom: 2em;
+        background-color: #e9ecef;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 12px;
+        width: 100%;
+      }
+    }
+
+    .card-deck {
+      justify-content: space-evenly;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding-top: 0;
+      width: 100%;
+      visibility: hidden;
+
+      @include medium {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include small {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        align-items: center;
+        border: none;
+        color: $header-color;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 1em;
+        background-color: inherit;
+
+        svg {
+          display: block;
+          font-size: 3.1rem;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .profile {
+    grid-area: file;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+
+    @include medium {
+      grid-area: file;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+  /* ==================jumbotron */
+
+  .jumbotron {
+    padding: 2rem 2rem;
+    grid-area: footer;
+
+    p {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 12px;
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      align-items: center;
+      display: flex;
+      justify-content: space-around;
+      height: 100%;
+
+      @include medium {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-left: 0;
+      }
+
+      li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 0;
+
+        @include medium {
+          line-height: 2.5;
+          flex-direction: column;
+        }
+
+        &:hover span {
+          visibility: visible;
+        }
+
+        span {
+          text-align: center;
+
+          @include easeOut();
+          z-index: 1;
+          visibility: hidden;
+        }
+
+        svg {
+          font-size: 3.5rem;
+          color: $dark-color;
+
+          @include medium {
+            font-size: 3rem;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}

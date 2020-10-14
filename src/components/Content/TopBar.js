@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
-import css from './topBar.module.css'
 import { Image } from 'react-bootstrap';
 import ava from './Ava.JPG';
 import Header from './Header';
+
 
 const TopBar = () => {
   function countYear() {
@@ -22,30 +22,34 @@ const TopBar = () => {
     paragraph: " / About me",
     name: "Home"
   }
+  
 
   return (
     <Fragment>
-      <div className={css.topbar}>
+      <div className="topbar">
         <Header header={data.header} paragraph={data.paragraph} name={data.name} />
-        <div className={css.aboutme}>
+        <div className="aboutme">
           <p>
-            As a results-driven web-developer, I am improving ReactJS skills, <a href="https://www.mongodb.com/mern-stack" target="_blank" rel="noopener noreferrer">MERN stack</a> . <br />
-            Currently learn animations, motions. <br />
-            Interested in Data visualizing.
+            A career switcher, enthusiastic web-developer, <br/> 
+            I am improving ReactJS skills, <a href="https://www.mongodb.com/mern-stack" target="_blank" rel="noopener noreferrer">MERN stack</a> . <br />
+            - Currently learn animations, motions. <br />
+            - Interested in Data visualizing.
           </p>
           <p> At the same time, I am learning back-end to grow knowledge in all stages of development.
           </p>
           <p><strong>I am a developer for:</strong></p>
-          <div className={css.countup}>
-            <span className={`${css.timeel} year`}>{countYear()}</span>
-            <span className={`${css.timeel} ${css.timeRef}`}>year<small>(s)</small> </span>
-            <span className={`${css.timeel} month`}>{countMonth()}</span>
-            <span className={`${css.timeel} ${css.timeRef}`}>month<small>(s)</small></span>
+          <div className="countup">
+            <span className="timeel year">{countYear()}</span>
+            <span className="timeel timeRef">year<small>(s)</small> </span>
+            <span className="timeel month">{countMonth()}</span>
+            <span className="timeel timeRef">month<small>(s)</small></span>
           </div>
         </div>
       </div>
 
-      <div className={css.rectangle}> <Image className={css.photo} src={ava} /></div>
+      <div className="rectangle">
+        <Image className="photo" src={ava} />
+      </div>
     </Fragment>
   )
 

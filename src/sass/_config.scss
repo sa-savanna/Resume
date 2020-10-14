@@ -1,0 +1,42 @@
+$primary-color: #ffbf00;
+$dark-color: #393939;
+$header-color: #999;
+$dimmed-color: #9999992e;
+$background-color: white;
+$contrast-color: #007bff;
+
+@mixin easeOut {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+}
+
+@mixin large {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media only screen and (max-width: 574px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media only screen and (max-width: 420px) {
+    @content;
+  }
+}
+
+@mixin Exsmall {
+  @media only screen and (max-width: 220px) {
+    @content;
+  }
+}
+
+// Custom devices
+@mixin rwd($screen) {
+  @media (max-width: $screen+"px") {
+    @content;
+  }
+}

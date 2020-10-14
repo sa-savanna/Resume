@@ -2,10 +2,8 @@
 import React, { useState, Fragment } from 'react'
 import { Form, Col, Row, Button, Alert } from 'react-bootstrap'
 import { FaPhoneSquareAlt, FaEnvelopeSquare } from 'react-icons/fa';
-// import { SiProbot } from 'react-icons/si';
 import { MdArrowDownward } from 'react-icons/md';
 import { IoLogoLinkedin } from 'react-icons/io';
-import '../../../App.css'
 import Axios from 'axios';
 import Header from '../Header';
 import ReCAPTCHA from "react-google-recaptcha";

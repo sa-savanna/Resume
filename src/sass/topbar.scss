@@ -1,0 +1,149 @@
+.topbar {
+  grid-area: topbar;
+  padding-left: 14%;
+  padding-right: 14%;
+
+  @include medium {
+    padding-left: 9%;
+    padding-right: 9%;
+  }
+
+  .aboutme {
+    a {
+      color: $contrast-color;
+    }
+
+    .countup {
+      .timeel {
+        display: inline-block;
+        padding: 10px;
+        background: $header-color;
+        margin: 0;
+        color: white;
+        min-width: 2.6rem;
+        border-radius: 10px 0 0 10px;
+        text-align: center;
+      }
+      .timeRef {
+        border-radius: 0 10px 10px 0;
+        background: $primary-color;
+        color: $dark-color;
+        margin-right: 3%;
+
+        @include rwd(320) {
+          margin-right: 42%;
+          margin-top: 3%;
+        }
+      }
+    }
+  }
+}
+
+.rectangle {
+  grid-area: photo;
+  width: 100%;
+  padding: 0px;
+  background-color: $primary-color;
+  height: 100%;
+
+  @include medium {
+    padding-bottom: 1em;
+  }
+
+  .photo {
+    width: 50%;
+    border-radius: 50%;
+    z-index: 99;
+    box-shadow: 1px 1px 0px 9px $background-color;
+    margin-top: 8em;
+    margin-left: -4em;
+
+    @include medium {
+      width: 33%;
+      margin-top: 1em;
+      margin-left: 2em;
+    }
+  }
+}
+
+/*            Header  
+==================================================*/
+
+.header {
+  margin-top: 6em;
+
+  @include small {
+    margin-top: 5em;
+  }
+
+  a {
+    color: $primary-color;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+
+    @include small {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+/*            Table  
+==================================================*/
+
+.bodyLang {
+  grid-area: lang;
+  padding-left: 14%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 1em;
+
+  @include large {
+    grid-template-columns: 1fr;
+  }
+  @include medium {
+    padding-left: 0;
+  }
+
+  .headLang {
+    display: block;
+    color: $primary-color;
+    font-size: 1.5rem;
+
+    @include medium {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 12px;
+      width: 100%;
+      background-color: $dimmed-color;
+      display: block;
+      margin: 2em 0;
+      color: $dark-color;
+      font-size: inherit;
+    }
+  }
+
+  .tableLang {
+    line-height: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0.8em 0;
+
+    @include medium {
+      margin-left: 9%;
+    }
+
+    span {
+      display: flex;
+      flex-wrap: wrap;
+      color: $contrast-color;
+    }
+
+    svg {
+      font-size: 10px;
+      margin-right: 5px;
+      color: $dimmed-color;
+    }
+  }
+}

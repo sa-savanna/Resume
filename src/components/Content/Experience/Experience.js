@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react'
-import edu from '../Education/edu.module.css'
 import { Button } from 'react-bootstrap';
 
 const Experience = () => {
@@ -12,18 +11,19 @@ const Experience = () => {
 
     return (
         <Fragment>
-            <Button variant="primary" block className="mb-4" onClick={toggle}> Experience</Button>
+            <Button variant="primary" block onClick={toggle}> Experience</Button>
             {
                 isVisible &&
 
-                < ul className={edu.timeline} style={{ height: '100%' }}>
-                    <li className={edu.timelineItem}>
-                        <div className={edu.timelineInfo}>
+                < ul style={{ height: '100%' }}>
+                    <li >
+                        <div className="timelineMarker"></div>
+                        <div className="timelineInfo">
                             <p>2016 - 2017 | Ukraine</p>
                         </div>
-                        <div className={edu.timelineMarker}></div>
-                        <div className={edu.timelineContent}>
-                            <h5 className={edu.timelineTitle}>English Time,  <small>Language center</small> </h5>
+
+                        <div className="timelineContent">
+                            <h5 className="timelineTitle">English Time,  <small>Language center</small> </h5>
                             <p>Branch administrator</p>
                             <ul>
                                 <li>Created, implemented and conducted a database of students' and teachers' personal files to automate the control for their progress, payments and schedule;</li>
@@ -33,13 +33,13 @@ const Experience = () => {
                             </ul>
                         </div>
                     </li>
-                    <li className={edu.timelineItem}>
-                        <div className={edu.timelineInfo}>
+                    <li >
+                        <div className="timelineInfo">
                             <p>2004-2016 | Ukraine</p>
                         </div>
-                        <div className={edu.timelineMarker}></div>
-                        <div className={edu.timelineContent}>
-                            <h5 className={edu.timelineTitle}>
+                        <div className="timelineMarker"></div>
+                        <div className="timelineContent">
+                            <h5 className="timelineTitle">
                                 Agroline, <small> agriculture parts</small> <br />
                             Techno, <small>peat mining</small><br />
                             Simor, <small> canned food production</small> <br />

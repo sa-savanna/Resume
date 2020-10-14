@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import { Image, Button } from 'react-bootstrap';
-import '../../../App.css'
 import icecream from './iceCream.png'
 import bookfinder from './BookFinder.png'
 import { FaGithub, FaRegEye } from 'react-icons/fa';
@@ -28,11 +27,11 @@ const Portfolio = () => {
                                 <li>REST API</li>
                                 <li>Styling</li>
                             </ul>
-                            <a href="https://sa-savanna.github.io/BookFinder/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://sa-savanna.github.io/BookFinder/" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="top" title="Click to watch">
                                 <Button variant="warning" size="lg"> <FaRegEye /></Button>
                             </a>
 
-                            <a href="https://github.com/sa-savanna/BookFinder" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/sa-savanna/BookFinder" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="top" title="View code">
                                 <Button variant="warning" size="lg"><FaGithub /></Button>
                             </a>
                         </div>
@@ -45,11 +44,11 @@ const Portfolio = () => {
                                 <li>REST API</li>
                                 <li>JavaScript</li>
                             </ul>
-                            <a href="https://sa-savanna.github.io/WeatherApp/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://sa-savanna.github.io/WeatherApp/" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="top" title="Click to watch">
                                 <Button variant="warning" size="lg"> <FaRegEye /></Button>
                             </a>
 
-                            <a href="https://github.com/sa-savanna/WeatherApp" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/sa-savanna/WeatherApp" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="top" title="View code">
                                 <Button variant="warning" size="lg"><FaGithub /></Button>
                             </a>
                         </div>
@@ -65,11 +64,11 @@ const Portfolio = () => {
                                 <li>Connect to MongoDB</li>
                             </ul>
 
-                            <a href="https://icecream-node-routing.herokuapp.com/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://icecream-node-routing.herokuapp.com/" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="top" title="Click to watch">
                                 <Button variant="warning" size="lg"><FaRegEye />
                                 </Button>
                             </a>
-                            <a href="https://github.com/sa-savanna/Node-routing" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/sa-savanna/Node-routing" target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="top" title="View code">
                                 <Button variant="warning" size="lg">
                                     <FaGithub />
                                 </Button>

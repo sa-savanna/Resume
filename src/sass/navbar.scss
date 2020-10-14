@@ -1,0 +1,69 @@
+.navbar {
+  display: grid;
+  justify-content: end;
+  justify-items: end;
+  position: fixed;
+  z-index: 3;
+  right: 0;
+
+  .navbar-toggler {
+    display: none;
+    margin-bottom: 0;
+
+    @include medium {
+      display: block;
+      margin-right: 0.25em;
+
+      &-icon {
+        background-image: url("https://mdbootstrap.com/img/svg/hamburger4.svg?color=393939");
+      }
+    }
+  }
+
+  @include medium {
+    .navbar-collapse {
+      background-color: #ffffffba;
+      box-shadow: -2px 4px 12px #6c757d;
+    }
+  }
+
+  ul {
+    text-align: right;
+    padding: 25px 0;
+    transition-duration: 0.4s;
+    list-style: none;
+
+    li {
+      font-size: 1rem;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: 0.2em 0;
+      text-transform: capitalize;
+      list-style-type: none;
+      padding-left: 0;
+
+      a {
+        display: inline-block;
+        padding: 0.4em 1em;
+        border-radius: 0.25em;
+        @include easeOut();
+        color: $dark-color;
+        text-decoration: none;
+        font-weight: 200;
+
+        &:after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 2px;
+          background: $primary-color;
+          @include easeOut();
+        }
+        &:hover:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

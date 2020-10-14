@@ -1,17 +1,58 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useRef, useEffect } from 'react';
 import { Col, Image, Row, Card, CardDeck, Jumbotron } from 'react-bootstrap';
 import { BsBootstrap } from 'react-icons/bs';
 import { AiOutlineHtml5 } from 'react-icons/ai';
-import { FaFigma } from 'react-icons/fa';
+import { FaFigma, FaSass } from 'react-icons/fa';
 import { DiLinux, DiCss3, DiGithubBadge, DiNodejsSmall, DiMongodb, DiJavascript1, DiNodejs, DiReact, DiVisualstudio } from 'react-icons/di';
 import { ReactComponent as Postman } from './pm-gray-horiz.svg'
 import TopBar from "../TopBar";
 import Education from '../Education/Education'
 import Experience from '../Experience/Experience'
 import TableLang from './TableLang';
-
+import { gsap, Power3 } from "gsap"
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+    let data = {
+        title: [
+            { name: "HTML", icon: <AiOutlineHtml5 /> },
+            { name: "CSS/SASS", icon: <FaSass /> },
+            { name: "JavaScript", icon: <DiJavascript1 /> },
+            { name: "Bootstrap", icon: <BsBootstrap /> },
+            { name: "MongoDB", icon: <DiMongodb /> },
+            { name: "ExpressJS", icon: <DiNodejsSmall /> },
+            { name: "ReactJS", icon: <DiReact /> },
+            { name: "NodeJS", icon: <DiNodejs /> },
+
+        ],
+        frame: [
+            { name: "Visual Studio", icon: <DiVisualstudio /> },
+            { name: "Linux mint", icon: <DiLinux /> },
+            { name: "GitHub", icon: <DiGithubBadge style={{ fontSize: '4em' }} /> },
+            { name: "Postman", icon: <Postman /> },
+            { name: "Figma", icon: <FaFigma /> }
+        ]
+    }
+
+
+    let app = useRef(null)
+    let tl = gsap.timeline()
+
+    useEffect(() => {
+        tl.from('.card svg', .8, { stagger: 0.15, x: 1000, ease: Power3.easeOut })
+            .from('.card p', .8, { stagger: 0.15, scale: 0, ease: Power3.easeOut })
+
+        gsap.to(app, 0, { css: { visibility: "visible" } })
+
+        ScrollTrigger.create({
+            animation: tl,
+            trigger: app,
+            // markers: true,
+            start: 'top 80%',
+            toggleActions: "restart none none restart"
+        })
+    }, [tl])
 
     return (
         <Fragment>
@@ -19,76 +60,29 @@ const About = () => {
                 <TopBar />
                 <TableLang />
 
-                <Row className="row-skills">
-                    <Col lg={3} md={3}>
-                        <Image src="https://www.cecimo.eu/wp-content/uploads/2013/09/skills-1024x737.jpg" />
+                <Row className="row-skills pl-0">
+                    <Col lg={3} md={3} className="p-0">
+                        <span data-text="Skills" className="headLang">Skills</span>
+                        {/* <Image src="https://www.cecimo.eu/wp-content/uploads/2013/09/skills-1024x737.jpg" /> */}
                         <span>SKILLS</span>
                     </Col>
-                    <Col lg={9} md={9}>
+                    <Col lg={9} md={9} className="px-0">
 
-                        <CardDeck>
-                            <Card>
-                                <AiOutlineHtml5 />
-                                <Card.Body>
-                                    <Card.Text>HTML</Card.Text>
-                                </Card.Body>
-                            </Card>
-
-                            <Card>
-                                <DiCss3 />
-                                <Card.Body>
-                                    <Card.Text>CSS</Card.Text>
-                                </Card.Body>
-                            </Card>
-
-                            <Card>
-                                <DiJavascript1 />
-                                <Card.Body>
-                                    <Card.Text>Java Script</Card.Text>
-                                </Card.Body>
-                            </Card>
-
-                            <Card>
-                                <BsBootstrap />
-                                <Card.Body>
-                                    <Card.Text>Bootstrap</Card.Text>
-                                </Card.Body>
-                            </Card>
-
-                            <Card>
-                                <DiMongodb />
-                                <Card.Body>
-                                    <Card.Text>MongoDB</Card.Text>
-                                </Card.Body>
-                            </Card>
-
-                            <Card>
-                                <DiNodejsSmall />
-                                <Card.Body>
-                                    <Card.Text>ExpressJS</Card.Text>
-                                </Card.Body>
-                            </Card>
-
-                            <Card>
-                                <DiReact />
-                                <Card.Body>
-                                    <Card.Text>ReactJS</Card.Text>
-                                </Card.Body>
-                            </Card>
-
-                            <Card>
-                                <DiNodejs />
-                                <Card.Body>
-                                    <Card.Text>NodeJS</Card.Text>
-                                </Card.Body>
-                            </Card>
-
+                        <CardDeck ref={el => app = el} >
+                            {data.title.map(i => (
+                                <Card key={i.key}>
+                                    {i.icon}
+                                    <Card.Body>
+                                        <Card.Text>{i.name}</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            ))}
                         </CardDeck>
                     </Col>
 
                 </Row>
 
-                <div className="file">
+                <div className="profile">
                     <div className="education">
                         <Education />
                     </div>
@@ -98,22 +92,22 @@ const About = () => {
                 </div>
 
                 <Jumbotron>
-                    <Row className='d-flex flex-row'>
-                        <Col lg={12}>
+                    <Row className='d-flex flex-row m-0'>
+                        <Col lg={12} className="p-0">
                             <p>I work with/on:</p>
                         </Col>
-                        <Col lg={12}>
+                        <Col lg={12} className="p-0">
                             <ul>
-                                <li><DiVisualstudio /><span>Visual Studio</span> </li>
-                                <li><DiLinux /><span>Linux mint</span></li>
-                                <li><DiGithubBadge style={{ fontSize: '4em' }} /><span>GitHub</span></li>
-                                <li><Postman /><span>Postman</span></li>
-                                <li><FaFigma /><span>Figma</span> </li>
+                                {data.frame.map(y => (
+                                    <li>{y.icon}
+                                        <span>{y.name}</span>
+                                    </li>
+                                ))}
                             </ul>
                         </Col>
                     </Row>
                 </Jumbotron>
-            </div> 
+            </div>
         </Fragment >
     )
 }

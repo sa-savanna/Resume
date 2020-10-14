@@ -1,15 +1,15 @@
 import React from 'react'
 import { FaCircle } from 'react-icons/fa';
 import { Fragment } from 'react';
-import css from "../topBar.module.css"
+
 
 const TableLang = () => {
     return (
         <Fragment>
-            <div className={css.bodyLang}>
+            <div className="bodyLang">
                 <div>
-                    <span className={css.headLang}>Languages</span>
-                    <div className={css.tableLang}>
+                    <span className="headLang">Languages</span>
+                    <div className="tableLang">
                         <p>English</p>
                         <span>
                             <FaCircle style={{ color: '#007bff' }} />
@@ -45,8 +45,8 @@ const TableLang = () => {
 
                 </div>
                 <div>
-                    <span className={css.headLang}>Info</span>
-                    <div className={css.tableLang}>
+                    <span className="headLang">Info</span>
+                    <div className="tableLang">
                         <p> Work permit</p>
                         <span>unlimited</span>
                         <p> Card residence</p>
