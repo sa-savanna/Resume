@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/github.io/Resume/static/css/main.1f3f8c56.chunk.css",
-    "main.js": "/github.io/Resume/static/js/main.7a453aa0.chunk.js",
-    "main.js.map": "/github.io/Resume/static/js/main.7a453aa0.chunk.js.map",
-    "runtime-main.js": "/github.io/Resume/static/js/runtime-main.0490af28.js",
-    "runtime-main.js.map": "/github.io/Resume/static/js/runtime-main.0490af28.js.map",
-    "static/js/2.dfe2b091.chunk.js": "/github.io/Resume/static/js/2.dfe2b091.chunk.js",
-    "static/js/2.dfe2b091.chunk.js.map": "/github.io/Resume/static/js/2.dfe2b091.chunk.js.map",
-    "index.html": "/github.io/Resume/index.html",
-    "precache-manifest.5928e2e7890b6bcd32761656f4f4d3bf.js": "/github.io/Resume/precache-manifest.5928e2e7890b6bcd32761656f4f4d3bf.js",
-    "service-worker.js": "/github.io/Resume/service-worker.js",
-    "static/css/main.1f3f8c56.chunk.css.map": "/github.io/Resume/static/css/main.1f3f8c56.chunk.css.map",
-    "static/js/2.dfe2b091.chunk.js.LICENSE.txt": "/github.io/Resume/static/js/2.dfe2b091.chunk.js.LICENSE.txt",
-    "static/media/Ava.JPG": "/github.io/Resume/static/media/Ava.70bd3d85.JPG",
-    "static/media/BookFinder.png": "/github.io/Resume/static/media/BookFinder.2896d531.png",
-    "static/media/WebDeveloper_Savchenko_Anna.pdf": "/github.io/Resume/static/media/WebDeveloper_Savchenko_Anna.6089ffa0.pdf",
-    "static/media/iceCream.png": "/github.io/Resume/static/media/iceCream.ff0f93c3.png",
-    "static/media/pm-gray-horiz.f4174600.svg": "/github.io/Resume/static/media/pm-gray-horiz.f4174600.svg",
-    "static/media/weather.png": "/github.io/Resume/static/media/weather.ff719629.png"
+    "main.css": "./static/css/main.c0f010ac.chunk.css",
+    "main.js": "./static/js/main.1f4ce673.chunk.js",
+    "main.js.map": "./static/js/main.1f4ce673.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.70050e21.js",
+    "runtime-main.js.map": "./static/js/runtime-main.70050e21.js.map",
+    "static/js/2.0f195e99.chunk.js": "./static/js/2.0f195e99.chunk.js",
+    "static/js/2.0f195e99.chunk.js.map": "./static/js/2.0f195e99.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.5aaa2c2cf5df767515dfd82cb58a7da5.js": "./precache-manifest.5aaa2c2cf5df767515dfd82cb58a7da5.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.c0f010ac.chunk.css.map": "./static/css/main.c0f010ac.chunk.css.map",
+    "static/js/2.0f195e99.chunk.js.LICENSE.txt": "./static/js/2.0f195e99.chunk.js.LICENSE.txt",
+    "static/media/Anna Savchenko_React Developer.pdf": "./static/media/Anna Savchenko_React Developer.ab5f1734.pdf",
+    "static/media/Ava.JPG": "./static/media/Ava.70bd3d85.JPG",
+    "static/media/BookFinder.png": "./static/media/BookFinder.2896d531.png",
+    "static/media/iceCream.png": "./static/media/iceCream.ff0f93c3.png",
+    "static/media/pm-gray-horiz.f4174600.svg": "./static/media/pm-gray-horiz.f4174600.svg",
+    "static/media/weather.png": "./static/media/weather.ff719629.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.0490af28.js",
-    "static/js/2.dfe2b091.chunk.js",
-    "static/css/main.1f3f8c56.chunk.css",
-    "static/js/main.7a453aa0.chunk.js"
+    "static/js/runtime-main.70050e21.js",
+    "static/js/2.0f195e99.chunk.js",
+    "static/css/main.c0f010ac.chunk.css",
+    "static/js/main.1f4ce673.chunk.js"
   ]
 }
