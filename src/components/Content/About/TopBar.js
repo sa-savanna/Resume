@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react'
 import { Image } from 'react-bootstrap';
-import ava from './Ava.JPG';
-import Header from './Header';
+import ava from '../Ava.JPG';
+import Header from '../Header';
 
 
 const TopBar = () => {
+  //to count time of experience we can use npm MOMENT but I wanted to use vanilla JS (not a big deal but I'm learning)
   function countYear() {
     var currentYear = new Date().getFullYear();
     return currentYear - new Date('2020, 01, 04').getFullYear();

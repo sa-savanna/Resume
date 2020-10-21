@@ -100,4 +100,38 @@
       }
     }
   }
+  .contact-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+      line-height: 2.5rem;
+
+      svg {
+        height: 30px;
+        width: 30px;
+        transition: transform 0.5s ease;
+
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+      @include small {
+        padding: 0 1rem;
+      }
+    }
+
+    @include small {
+      flex-direction: row;
+      left: 0;
+      right: 0;
+      justify-content: center;
+    }
+  }
 }

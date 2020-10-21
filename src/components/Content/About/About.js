@@ -5,7 +5,7 @@ import { AiOutlineHtml5 } from 'react-icons/ai';
 import { FaFigma, FaSass } from 'react-icons/fa';
 import { DiLinux, DiGithubBadge, DiNodejsSmall, DiMongodb, DiJavascript1, DiNodejs, DiReact, DiVisualstudio } from 'react-icons/di';
 import { ReactComponent as Postman } from './pm-gray-horiz.svg'
-import TopBar from "../TopBar";
+import TopBar from "./TopBar";
 import Education from '../Education/Education'
 import Experience from '../Experience/Experience'
 import TableLang from './TableLang';

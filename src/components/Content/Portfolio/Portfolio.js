@@ -18,10 +18,16 @@ const Portfolio = () => {
             <div className="inner">
 
                 <Header header={data.header} paragraph={data.paragraph} name={data.name} />
+                <div className="title">
+                    <p>This site is made in <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React </a>library witout backend using <a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer">SASS</a>  styling and <a href="https://greensock.com/" target="_blank" rel="noopener noreferrer"> GreenSock</a> animation.</p>
+                    <p></p>
+                </div>
+
                 <div className="wrapper p-0">
                     <div className="card">
                         <Image variant="top" src={bookfinder} />
                         <div className="info">
+                            <h4 className="mb-5">"Google books sercher"</h4>
                             <h5>Exersice for:</h5>
                             <ul>
                                 <li>REST API</li>
@@ -39,6 +45,7 @@ const Portfolio = () => {
                     <div className="card">
                         <Image variant="top" src={weather} />
                         <div className="info">
+                            <h4 className="mb-5">"Wheather broadcast"</h4>
                             <h5>Exersice for:</h5>
                             <ul>
                                 <li>REST API</li>
@@ -57,6 +64,7 @@ const Portfolio = () => {
                     <div className="card">
                         <Image variant="top" src={icecream} />
                         <div className="info">
+                            <h4 className="mb-5">"Random idea Blog"</h4>
                             <h5>Exersice for:</h5>
                             <ul>
                                 <li>NodeJS Routing</li>

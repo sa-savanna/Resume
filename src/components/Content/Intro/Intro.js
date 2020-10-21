@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react'
 import { TimelineMax, Circ } from "gsap"
-
+import { FaPhoneSquareAlt, FaEnvelopeSquare, FaAt, FaWhatsapp, FaLinkedinIn } from 'react-icons/fa';
+import { IoLogoLinkedin } from 'react-icons/io';
 
 const Intro = () => {
 
@@ -13,22 +14,29 @@ const Intro = () => {
     return (
         <Fragment >
             <div className="box-intro">
-                
-                    <div className="header-table">
-                        <h1 className='box-headline'>Hello
+
+                <div className="header-table">
+                    <h1 className='box-headline'>Hello
                             <div className="box bounce-6"></div>
-                        </h1>
-                        <h1 className='box-headline'>I am</h1>
-                        <h1 className='box-headline'>anna</h1>
-                        <p>savchenko</p>
-                    </div>
-               
+                    </h1>
+                    <h1 className='box-headline'>I am</h1>
+                    <h1 className='box-headline'>anna</h1>
+                    <p>savchenko</p>
+                </div>
+
                 <div className='sub-table'>
                     <h5>junior</h5>
                     <h5>web</h5>
                     <h5>developer</h5>
                 </div>
-
+                <div className="contact-info">
+                    <a href="https://wa.me/32493339032?text=Hello%20Anna," target='blank' rel="noopener noreferrer"
+                        title="Via whatsapp"><FaWhatsapp/> </a>
+                    <a href="mailto:savanna.be.ua@gmail.com" target='blank' rel="noopener noreferrer">
+                        <FaAt /> </a>
+                    <a href="https://www.linkedin.com/in/anna-savchenko" target='blank' rel="noopener noreferrer">
+                        <FaLinkedinIn/> </a>
+                </div>
             </div>
 
         </Fragment >
