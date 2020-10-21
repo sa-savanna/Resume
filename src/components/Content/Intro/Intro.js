@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react'
 import { TimelineMax, Circ } from "gsap"
-import { FaPhoneSquareAlt, FaEnvelopeSquare, FaAt, FaWhatsapp, FaLinkedinIn } from 'react-icons/fa';
-import { IoLogoLinkedin } from 'react-icons/io';
+import { FaAt, FaWhatsapp, FaLinkedinIn } from 'react-icons/fa';
+
 
 const Intro = () => {
 
