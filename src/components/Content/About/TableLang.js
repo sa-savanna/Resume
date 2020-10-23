@@ -1,6 +1,6 @@
 import React from 'react'
-import { FaCircle } from 'react-icons/fa';
 import { Fragment } from 'react';
+import { ProgressBar } from 'react-bootstrap';
 
 
 const TableLang = () => {
@@ -12,34 +12,23 @@ const TableLang = () => {
                     <div className="tableLang">
                         <p>English</p>
                         <span>
-                            <FaCircle style={{ color: '#007bff' }} />
-                            <FaCircle style={{ color: '#007bff' }} />
-                            <FaCircle style={{ color: '#007bff' }} />
-                            <FaCircle style={{ color: '#007bff' }} />
-                            <FaCircle />
-                            <FaCircle />
+                            <ProgressBar now={70} label="B2" />
                         </span>
                         <p>French</p>
                         <span>
-                            <FaCircle style={{ color: '#007bff' }} />
-                            <FaCircle style={{ color: '#007bff' }} />
-                            <FaCircle style={{ color: '#007bff' }} />
-                            <FaCircle />
-                            <FaCircle />
-                            <FaCircle />
+                            <ProgressBar now={50} label="B1" />
                         </span>
                         <p>Dutch</p>
                         <span>
-                            <FaCircle style={{ color: '#007bff' }} />
-                            <FaCircle style={{ color: '#007bff' }} />
-                            <FaCircle />
-                            <FaCircle />
-                            <FaCircle />
-                            <FaCircle />
+                            <ProgressBar animated now={30} label="2.2" />
                         </span>
-                        <p>Russian, Ukranian</p>
+                        <p>Russian</p>
                         <span>
-                            Native
+                            <ProgressBar now={100} label="Native" />
+                        </span>
+                        <p>Ukranian</p>
+                        <span>
+                            <ProgressBar now={100} label="Native" />
                         </span>
                     </div>
 

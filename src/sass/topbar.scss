@@ -138,6 +138,11 @@
       display: flex;
       flex-wrap: wrap;
       color: $contrast-color;
+      
+      .progress{
+        width: 80%;
+        
+      }
     }
 
     svg {

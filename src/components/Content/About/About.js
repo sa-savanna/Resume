@@ -69,7 +69,7 @@ const About = () => {
 
                         <CardDeck ref={el => app = el} >
                             {data.title.map(i => (
-                                <Card key={i.key}>
+                                <Card key={i.name}>
                                     {i.icon}
                                     <Card.Body>
                                         <Card.Text>{i.name}</Card.Text>

@@ -51,7 +51,7 @@ const Experience = () => {
                                 <li>Scheduled meetings and agendas;</li>
                                 <li>Took the initiative to install, update and maintain software in order to fix networking errors and the smooth running operations;</li>
                                 <li>Collaborated with the HR department for the preparation of documentation;</li>
-                                <li>Prepeared materials to expositions and presentations.</li>
+                                <li>Prepeared materials for expositions and presentations.</li>
                             </ul>
 
                         </div>
