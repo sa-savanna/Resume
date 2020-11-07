@@ -15,7 +15,7 @@
       margin-right: 0.25em;
 
       &-icon {
-        background-image: url("https://mdbootstrap.com/img/svg/hamburger4.svg?color=393939");
+        background-image: url(../components/NavBar/controls.svg);
       }
     }
   }
@@ -23,13 +23,14 @@
   @include medium {
     .navbar-collapse {
       background-color: #ffffffba;
-      box-shadow: -2px 4px 12px #6c757d;
+      box-shadow: -1px 4px 7px 0px #adb5bd;
     }
   }
 
   ul {
     text-align: right;
-    padding: 25px 0;
+    padding-top: 0.5rem;
+    padding-left: 0;
     transition-duration: 0.4s;
     list-style: none;
 

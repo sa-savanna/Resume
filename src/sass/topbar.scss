@@ -11,6 +11,10 @@
   .aboutme {
     a {
       color: $contrast-color;
+
+      svg{
+        font-size: .6rem;
+      }
     }
 
     .countup {
@@ -70,7 +74,7 @@
 ==================================================*/
 
 .header {
-  margin-top: 6em;
+  margin-top: 4em;
 
   @include small {
     margin-top: 5em;

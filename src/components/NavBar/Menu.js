@@ -1,18 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { FiDownload } from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
 import File from "../Content/Junior developer_Anna Savchenko.pdf"
 
 
+
 const Menu = () => {
     const [expanded, setExpanded] = useState(false);
+    const clikedToggler = useRef(null)
+
+    useEffect(() => {
+        clikedToggler.current.click()
+
+    }, [])
+
+   
 
     return (
-        <Navbar expanded={expanded}  collapseOnSelect expand="sm" id="navigation" >
-            <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")} aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <ul className="box-primary-nav">
+
+        < Navbar expanded={expanded} collapseOnSelect expand="sm" id="navigation" >
+            <Navbar.Toggle 
+            ref={clikedToggler} 
+            onClick={() => setExpanded(expanded ? false : "expanded")} 
+            onBlur={()=> setExpanded(false)}
+            aria-controls="responsive-navbar-nav" />
+
+            <Navbar.Collapse>
+                <ul>
                     <li><NavLink onClick={() => setExpanded(false)} to="/me">About</NavLink></li>
                     <li><NavLink onClick={() => setExpanded(false)} to="/portfolio">Portfolio</NavLink></li>
                     <li><NavLink onClick={() => setExpanded(false)} to="/contact">Contact</NavLink></li>
@@ -20,7 +35,7 @@ const Menu = () => {
                 </ul>
             </Navbar.Collapse>
 
-        </Navbar>
+        </Navbar >
     )
 }
 export default Menu;

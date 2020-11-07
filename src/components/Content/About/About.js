@@ -1,5 +1,4 @@
-import React, { Fragment, useRef, useEffect } from 'react';
-import { Col, Row, Card, CardDeck, Jumbotron } from 'react-bootstrap';
+import React from 'react';
 import { BsBootstrap } from 'react-icons/bs';
 import { AiOutlineHtml5 } from 'react-icons/ai';
 import { FaFigma, FaSass } from 'react-icons/fa';
@@ -9,9 +8,9 @@ import TopBar from "./TopBar";
 import Education from '../Education/Education'
 import Experience from '../Experience/Experience'
 import TableLang from './TableLang';
-import { gsap, Power3 } from "gsap"
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
+import Skills from './Skills';
+import JumbotronComponent from "./Jumbotron"
+
 
 const About = () => {
     let data = {
@@ -32,82 +31,77 @@ const About = () => {
             { name: "GitHub", icon: <DiGithubBadge style={{ fontSize: '4em' }} /> },
             { name: "Postman", icon: <Postman /> },
             { name: "Figma", icon: <FaFigma /> }
+        ],
+        education: [
+            {
+                time: "Feb. 2020 - Sep. 2020",
+                instituion: 'Intec Brussel, Brussels',
+                title: 'Web-developer Certificate'
+            },
+            {
+                time: "2001-2006",
+                instituion: 'Metallurgical Academy of Ukraine, Dnipro',
+                title: 'Bachelor of Engineering'
+            }
+        ],
+        experience: [
+            {
+                time: 'Jul 2016 - Jun 2017',
+                company: 'English Time,',
+                sector: "Language center",
+                position: 'Branch administrator',
+                responsibilities: [
+                    'Created, implemented and conducted a database of students\' and teachers\' personal files to automate the control for their progress, payments and schedule;',
+                    'Managed advertisements and promotion pages in social networks;',
+                    'Designed banners, booklets and advertisement;',
+                    'Assisted in the cycle of the recruiting process.'
+                ]
+            },
+            {
+                time: 'Jul 2015 - Jun 2016',
+                company: '  Agroline, ',
+                sector: " Agriculture parts John Deere",
+                position: 'Office administrator',
+                responsibilities: []
+            },
+            {
+                time: 'May 2011 - May 2015',
+                company: ' Techno, ',
+                sector: "Peat mining, science",
+                position: 'Office manager',
+                responsibilities: []
+            },
+            {
+                time: 'Jul 2007 - Jan 2011',
+                company: 'Simor,',
+                sector: "Canned food production",
+                position: 'Personal assistant, Logistic manager',
+                responsibilities: []
+            }
         ]
     }
 
 
-    let app = useRef(null)
-    let tl = gsap.timeline()
-
-    useEffect(() => {
-        tl.from('.card svg', .8, { stagger: 0.15, x: 1000, ease: Power3.easeOut })
-            .from('.card p', .8, { stagger: 0.15, scale: 0, ease: Power3.easeOut })
-
-        gsap.to(app, 0, { css: { visibility: "visible" } })
-
-        ScrollTrigger.create({
-            animation: tl,
-            trigger: app,
-            // markers: true,
-            start: 'top 80%',
-            toggleActions: "restart none none restart"
-        })
-    }, [tl])
-
     return (
-        <Fragment>
+        <>
             <div className="container2">
                 <TopBar />
                 <TableLang />
 
-                <Row className="row-skills pl-0">
-                    <Col lg={3} md={3} className="p-0">
-                        <span data-text="Skills" className="headLang">Skills</span>
-                        <span>SKILLS</span>
-                    </Col>
-                    <Col lg={9} md={9} className="px-0">
-
-                        <CardDeck ref={el => app = el} >
-                            {data.title.map(i => (
-                                <Card key={i.name}>
-                                    {i.icon}
-                                    <Card.Body>
-                                        <Card.Text>{i.name}</Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            ))}
-                        </CardDeck>
-                    </Col>
-
-                </Row>
+                <Skills data={data} />
 
                 <div className="profile">
-                    <div className="education">
-                        <Education />
+                    <div >
+                        <Education data={data.education} />
                     </div>
-                    <div className="experience">
-                        <Experience />
+                    <div>
+                        <Experience data={data.experience} />
                     </div>
                 </div>
 
-                <Jumbotron>
-                    <Row className='d-flex flex-row m-0'>
-                        <Col lg={12} className="p-0">
-                            <p>I work with/on:</p>
-                        </Col>
-                        <Col lg={12} className="p-0">
-                            <ul>
-                                {data.frame.map(y => (
-                                    <li>{y.icon}
-                                        <span>{y.name}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </Col>
-                    </Row>
-                </Jumbotron>
+                <JumbotronComponent data={data} />
             </div>
-        </Fragment >
+        </>
     )
 }
 

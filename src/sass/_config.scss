@@ -5,6 +5,9 @@ $dimmed-color: #9999992e;
 $background-color: white;
 $contrast-color: #007bff;
 
+
+
+
 @mixin easeOut {
   transition: all 0.3s ease-out;
   -webkit-transition: all 0.3s ease-out;
@@ -40,3 +43,6 @@ $contrast-color: #007bff;
     @content;
   }
 }
+
+
+

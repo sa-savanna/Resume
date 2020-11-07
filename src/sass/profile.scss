@@ -1,115 +1,117 @@
-button {
-  letter-spacing: 5px !important;
-  margin-bottom: 2rem;
-}
-
-ul {
-  line-height: 1.4em;
-  list-style: none;
-  margin: 0;
-  width: 100%;
-  padding-left: 2%;
-
-  @include small {
-    padding-left: 4%;
-    padding-right: 5%;
+.profile {
+  button {
+    letter-spacing: 5px !important;
+    margin-bottom: 2rem;
   }
 
-  li {
-    padding-left: 40px;
-    position: relative;
+  ul {
+    line-height: 1.4em;
+    list-style: none;
+    margin: 0;
+    width: 100%;
+    padding-left: 2%;
 
-    &:last-child {
-      padding-bottom: 0;
+    @include small {
+      padding-left: 4%;
+      padding-right: 5%;
     }
 
-    .timelineInfo {
-      margin: 0 0 0.5em 0;
-      white-space: nowrap;
-    }
+    li {
+      padding-left: 40px;
+      position: relative;
 
-    .timelineMarker {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 15px;
+      &:last-child {
+        padding-bottom: 0;
+      }
 
-      &:before {
-        background-color: $contrast-color;
-        border: 3px solid transparent;
-        border-radius: 100%;
-        content: "";
-        display: block;
-        height: 15px;
+      .timelineInfo {
+        margin: 0 0 0.5em 0;
+        white-space: nowrap;
+      }
+
+      .timelineMarker {
         position: absolute;
-        top: 4px;
+        top: 0;
+        bottom: 0;
         left: 0;
         width: 15px;
-        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
-      }
-      &:after {
-        content: "";
-        width: 3px;
-        background: #ccd5db;
-        display: block;
-        position: absolute;
-        top: 24px;
-        bottom: 0;
-        left: 6px;
-      }
 
-      &:last-child:after {
-        content: none;
-      }
-    }
-    .timelineContent {
-      padding-bottom: 40px;
-
-      p {
-        color: $header-color;
-
-        &:last-child {
-          margin-bottom: 0;
+        &:before {
+          background-color: $contrast-color;
+          border: 3px solid transparent;
+          border-radius: 100%;
+          content: "";
+          display: block;
+          height: 15px;
+          position: absolute;
+          top: 4px;
+          left: 0;
+          width: 15px;
+          transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
         }
-      }
-
-      ul {
-        padding-left: 0px;
-        padding-right: 6%;
-
-        @include large {
-          padding-left: 0px;
-          padding-right: 5%;
-        }
-        @include small {
-          padding-left: 0px;
+        &:after {
+          content: "";
+          width: 3px;
+          background: #ccd5db;
+          display: block;
+          position: absolute;
+          top: 24px;
+          bottom: 0;
+          left: 6px;
         }
 
-        li {
-          list-style: none;
-          padding-left: 0px;
+        &:last-child:after {
+          content: none;
+        }
+      }
+      .timelineContent {
+        padding-bottom: 40px;
 
-          &:before {
-            content: "";
-            display: inline-block;
-            background-color: $primary-color;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            margin-right: 12px;
-            position: relative;
-            top: -3px;
+        p {
+          color: $header-color;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        ul {
+          padding-left: 0px;
+          padding-right: 6%;
+
+          @include large {
+            padding-left: 0px;
+            padding-right: 5%;
+          }
+          @include small {
+            padding-left: 0px;
+          }
+
+          li {
+            list-style: none;
+            padding-left: 0px;
+
+            &:before {
+              content: "";
+              display: inline-block;
+              background-color: $primary-color;
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              margin-right: 12px;
+              position: relative;
+              top: -3px;
+            }
           }
         }
       }
-    }
 
-    &:not(.period):hover {
-      .timelineMarker {
-        &:before {
-          background: transparent;
-          border: 3px solid $contrast-color;
+      &:not(.period):hover {
+        .timelineMarker {
+          &:before {
+            background: transparent;
+            border: 3px solid $contrast-color;
+          }
         }
       }
     }

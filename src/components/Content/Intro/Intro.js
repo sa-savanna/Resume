@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { TimelineMax, Circ } from "gsap"
 import { FaAt, FaWhatsapp, FaLinkedinIn } from 'react-icons/fa';
 
@@ -12,12 +12,11 @@ const Intro = () => {
     })
 
     return (
-        <Fragment >
+        <>
             <div className="box-intro">
-
                 <div className="header-table">
                     <h1 className='box-headline'>Hello
-                            <div className="box bounce-6"></div>
+                    <div className="box bounce-6"></div>
                     </h1>
                     <h1 className='box-headline'>I am</h1>
                     <h1 className='box-headline'>anna</h1>
@@ -31,15 +30,15 @@ const Intro = () => {
                 </div>
                 <div className="contact-info">
                     <a href="https://wa.me/32493339032?text=Hello%20Anna," target='blank' rel="noopener noreferrer"
-                        title="Via whatsapp"><FaWhatsapp/> </a>
+                        title="Via whatsapp"><FaWhatsapp /> </a>
                     <a href="mailto:savanna.be.ua@gmail.com" target='blank' rel="noopener noreferrer">
                         <FaAt /> </a>
                     <a href="https://www.linkedin.com/in/anna-savchenko" target='blank' rel="noopener noreferrer">
-                        <FaLinkedinIn/> </a>
+                        <FaLinkedinIn /> </a>
                 </div>
             </div>
 
-        </Fragment >
+        </ >
     )
 }
 
