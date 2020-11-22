@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { FiDownload } from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
-import File from "../Content/Junior developer_Anna Savchenko.pdf"
+import File from "./Junior_Web-Developer_Brussels_Anna_Savchenko.pdf"
 
 
 

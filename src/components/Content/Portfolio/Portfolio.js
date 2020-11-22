@@ -5,6 +5,7 @@ import bookfinder from './BookFinder.png'
 import { FaGithub, FaRegEye } from 'react-icons/fa';
 import Header from '../Header';
 import weather from './weather.png'
+import voyager from "./Voyager.png";
 
 const data = {
     header: {
@@ -15,7 +16,7 @@ const data = {
     cards: [
         {
             img: bookfinder,
-            title: "Google books sercher",
+            title: "Google books searcher",
             subtitle: 'Exersice for:',
             list: ['REST API', 'Styling'],
             links: ['https://sa-savanna.github.io/BookFinder/',
@@ -38,6 +39,14 @@ const data = {
             list: ['NodeJS Routing', 'Registration form', 'Connect to MongoDB'],
             links: ['https://icecream-node-routing.herokuapp.com/',
                 'https://github.com/sa-savanna/Node-routing']
+        },
+        {
+            img: voyager,
+            title: "Travel group project",
+            subtitle: 'Exersice for:',
+            list: ['React', 'Using multiple API', 'Team worknig'],
+            links: ['',
+                'https://github.com/sa-savanna/React-Voyager.git']
         }
     ]
 }
@@ -50,7 +59,7 @@ const Portfolio = () => {
 
                 <Header header={data.header.title} paragraph={data.header.paragraph} name={data.header.name} />
                 <div className="title">
-                    <p>This site is made with <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React </a>library without backend using <a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer">SASS</a>  styling and <a href="https://greensock.com/" target="_blank" rel="noopener noreferrer"> GreenSock</a> animation.</p>
+                    <p>This site is made with <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React </a>library, without backend, using <a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer">SASS</a>  styling and <a href="https://greensock.com/" target="_blank" rel="noopener noreferrer"> GreenSock</a> animation.</p>
                     <a href='https://github.com/sa-savanna/Resume' target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="top" title="View code">
                         <Button variant="warning" size="sm"><FaGithub />View code</Button>
                     </a>
@@ -65,8 +74,11 @@ const Portfolio = () => {
                                     <h4 className="mb-5">{card.title}</h4>
                                     <h5>{card.subtitle}</h5>
                                     <ul>
-                                        <li>{card.list[0]}</li>
-                                        <li>{card.list[1]}</li>
+                                        {
+                                            card.list.map((x, y) => (
+                                                <li key={y}>{x}</li>
+                                            ))
+                                        }
                                     </ul>
                                     <a href={card.links[0]} target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="top" title="Click to watch">
                                         <Button variant="warning" size="lg"> <FaRegEye /></Button>

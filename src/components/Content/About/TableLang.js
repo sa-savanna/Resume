@@ -66,7 +66,7 @@ const TableLang = () => {
                         <span>
                             <ProgressBar now={calculatePercentOfKnowledge(data.levels[0])} label={data.levels[0]} />
                             <ProgressBar now={calculatePercentOfKnowledge(data.levels[1])} label={data.levels[1]} />
-                            <ProgressBar now={calculatePercentOfKnowledge(data.levels[2])} label={data.levels[2]} />
+                            <ProgressBar animated now={calculatePercentOfKnowledge(data.levels[2])} label={data.levels[2]} />
                             <ProgressBar now={calculatePercentOfKnowledge(data.levels[3])} label={data.levels[3]} />
                             <ProgressBar now={calculatePercentOfKnowledge(data.levels[4])} label={data.levels[4]} />
                         </span>
