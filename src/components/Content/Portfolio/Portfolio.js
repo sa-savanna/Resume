@@ -44,7 +44,7 @@ const data = {
             img: voyager,
             title: "Travel group project",
             subtitle: 'Exersice for:',
-            list: ['React', 'Using multiple API', 'Team worknig'],
+            list: ['React hooks', 'Using multiple API', 'Team work'],
             links: ['',
                 'https://github.com/sa-savanna/React-Voyager.git']
         }
