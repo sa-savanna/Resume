@@ -15,16 +15,16 @@ const Menu = () => {
 
     }, [])
 
-   
+
 
     return (
 
         < Navbar expanded={expanded} collapseOnSelect expand="sm" id="navigation" >
-            <Navbar.Toggle 
-            ref={clikedToggler} 
-            onClick={() => setExpanded(expanded ? false : "expanded")} 
-            onBlur={()=> setExpanded(false)}
-            aria-controls="responsive-navbar-nav" />
+            <Navbar.Toggle
+                ref={clikedToggler}
+                onClick={() => setExpanded(expanded ? false : "expanded")}
+                onBlur={() => setExpanded(false)}
+                aria-controls="responsive-navbar-nav" />
 
             <Navbar.Collapse>
                 <ul>

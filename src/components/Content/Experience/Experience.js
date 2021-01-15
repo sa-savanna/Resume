@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
 
 const Experience = ({ data }) => {
@@ -10,7 +10,7 @@ const Experience = ({ data }) => {
     }
 
     return (
-        <Fragment>
+        <>
             <Button variant="primary" block onClick={toggle}> Experience</Button>
             {
                 isVisible &&
@@ -34,7 +34,7 @@ const Experience = ({ data }) => {
 
             }
             <div></div>
-        </Fragment >
+        </ >
     )
 }
 export default Experience;
