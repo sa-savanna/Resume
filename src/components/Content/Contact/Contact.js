@@ -1,7 +1,7 @@
 
-import React, { useState, Fragment } from 'react'
-import { Form, Col, Row, Button, Alert } from 'react-bootstrap'
-import { FaWhatsapp, FaAt } from 'react-icons/fa';
+import React, { useState } from 'react'
+import { Form, Col, Row, Button, Alert, Popover, OverlayTrigger } from 'react-bootstrap'
+import { FaWhatsapp, FaAt, FaExternalLinkAlt } from 'react-icons/fa';
 import { MdArrowDownward } from 'react-icons/md';
 import { IoLogoLinkedin } from 'react-icons/io';
 import Axios from 'axios';
@@ -22,6 +22,7 @@ function Contact() {
         subject: "",
         message: ""
     });
+
 
     const handleOnChange = event => {
         event.persist();
@@ -71,9 +72,27 @@ function Contact() {
 
     }
 
+    const popoverGsm = (
+        <Popover id="popover-basic">
+            <Popover.Content>
+                <a href="https://wa.me/32493339032?text=Hello%20Anna," target='blank' rel="noopener noreferrer" title="Via whatsapp">
+                    +32 493 33 90 32</a>
+            </Popover.Content>
+        </Popover>
+    );
+
+    const popoverEmail = (
+        <Popover id="popover-basic">
+            <Popover.Content>
+                <a href="mailto:savanna.be.ua@gmail.com" target='blank' rel="noopener noreferrer">
+                    savanna.be.ua@gmail.com</a>
+            </Popover.Content>
+        </Popover>
+    );
+
 
     return (
-        <Fragment>
+        <>
             <div className="inner">
                 <Header name={data.name} header={data.header} paragraph={data.paragraph} />
                 <div className="wrapper">
@@ -161,18 +180,26 @@ function Contact() {
                         <Col md={6} className="col-left" >
                             <h5>Belgium, Brussels</h5>
                             <div className="contact-info">
-                                <a href="https://wa.me/32493339032?text=Hello%20Anna," target='blank' rel="noopener noreferrer" title="Via whatsapp">
-                                    <FaWhatsapp /> +32 493 33 90 32</a>
-                                <a href="mailto:savanna.be.ua@gmail.com" target='blank' rel="noopener noreferrer">
-                                    <FaAt /> savanna.be.ua@gmail.com</a>
+                                <div><FaWhatsapp />
+                                    <OverlayTrigger placement="right" overlay={popoverGsm} delay={{ show: 0, hide: 1000 }}>
+                                        <span> GSM number</span>
+                                    </OverlayTrigger>
+                                </div>
+
+                                <div><FaAt />
+                                    <OverlayTrigger placement="right" overlay={popoverEmail} delay={{ show: 0, hide: 1000 }}>
+                                        <span> E-mail</span>
+                                    </OverlayTrigger>
+                                </div>
                                 <a href="https://www.linkedin.com/in/anna-savchenko" target='blank' rel="noopener noreferrer">
-                                    <IoLogoLinkedin /> LinkedIn </a>
+                                    <IoLogoLinkedin /> LinkedIn <sup><FaExternalLinkAlt  /></sup></a>
+
                             </div>
                         </Col>
                     </Row>
                 </div >
-            </div>
-        </Fragment>
+            </div >
+        </>
     )
 }
 

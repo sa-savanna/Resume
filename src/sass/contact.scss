@@ -68,15 +68,35 @@
           transform: scale(1.5);
         }
       }
-      a {
+
+      span {
         text-decoration: none;
+        line-height: 3rem;
+
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+
+      a {
+        // text-decoration: none;
         color: inherit;
         line-height: 3rem;
+
+        sup svg {
+          width: 0.7rem;
+          color: $contrast-color;
+        }
 
         @include small {
           font-size: 0.8rem;
           line-height: 2.5rem;
         }
+      }
+
+      .popover-body {
+        font-family: inherit;
       }
     }
   }

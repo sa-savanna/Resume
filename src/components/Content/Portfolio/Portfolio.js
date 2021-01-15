@@ -6,6 +6,7 @@ import { FaGithub, FaRegEye } from 'react-icons/fa';
 import Header from '../Header';
 import weather from './weather.png'
 import voyager from "./Voyager.png";
+import burger from "./Burger.png"
 
 const data = {
     header: {
@@ -42,11 +43,20 @@ const data = {
         },
         {
             img: voyager,
-            title: "Travel group project",
+            title: "Group project of Travel site",
             subtitle: 'Exersice for:',
             list: ['React hooks', 'Using multiple API', 'Team work'],
-            links: ['',
+            links: ['https://sa-savanna.github.io/React-Voyager/#/',
                 'https://github.com/sa-savanna/React-Voyager.git']
+        },
+        {
+            img: burger,
+            title: "Order your favourite Burger",
+            subtitle: 'Exersice for:',
+            list: ['React hooks', 'Connect and deploy to Firebase', 'Redux'],
+            links: ['',
+                'https://burgerdatabase-4cbd2.web.app/',
+                'https://github.com/sa-savanna/Burger-Builder']
         }
     ]
 }

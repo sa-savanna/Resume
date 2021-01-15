@@ -4,7 +4,7 @@ import { ProgressBar } from 'react-bootstrap';
 
 const data = {
     languages: ["English", "French", "Dutch", 'Russian', 'Ukranian'],
-    levels: ['B2', 'B1', '2.2', 'Native', 'Native'],
+    levels: ['C1', 'B1', '2.3', 'Native', 'Native'],
     info: [
         { name: 'Work permit', title: 'unlimited' },
         { name: 'Card residence', title: 'till Feb. 2023' },
@@ -65,8 +65,8 @@ const TableLang = () => {
                         </div>
                         <span>
                             <ProgressBar now={calculatePercentOfKnowledge(data.levels[0])} label={data.levels[0]} />
-                            <ProgressBar now={calculatePercentOfKnowledge(data.levels[1])} label={data.levels[1]} />
-                            <ProgressBar animated now={calculatePercentOfKnowledge(data.levels[2])} label={data.levels[2]} />
+                            <ProgressBar animated now={calculatePercentOfKnowledge(data.levels[1])} label={data.levels[1]} />
+                            <ProgressBar now={calculatePercentOfKnowledge(data.levels[2])} label={data.levels[2]} />
                             <ProgressBar now={calculatePercentOfKnowledge(data.levels[3])} label={data.levels[3]} />
                             <ProgressBar now={calculatePercentOfKnowledge(data.levels[4])} label={data.levels[4]} />
                         </span>
