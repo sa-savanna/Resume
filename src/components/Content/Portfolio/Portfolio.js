@@ -7,6 +7,7 @@ import Header from '../Header';
 import weather from './weather.png'
 import voyager from "./Voyager.png";
 import burger from "./Burger.png"
+import todo from "./todo.png"
 
 const data = {
     header: {
@@ -54,14 +55,24 @@ const data = {
             title: "Order your favourite Burger",
             subtitle: 'Exersice for:',
             list: ['React hooks', 'Connect and deploy to Firebase', 'Redux'],
-            links: ['',
-                'https://burgerdatabase-4cbd2.web.app/',
+            links: ['https://burgerdatabase-4cbd2.web.app/',
                 'https://github.com/sa-savanna/Burger-Builder']
+        },
+        {
+            img: todo,
+            title: "Angular Todo exersice",
+            subtitle: 'Exersice for:',
+            list: ['Understanding the principles', 'Connect and deploy to Firebase'],
+            links: ['https://angular-todo-app-2dcd0.web.app/',
+                '']
         }
     ]
 }
 
 const Portfolio = () => {
+
+    
+
 
     return (
         <>
@@ -90,13 +101,17 @@ const Portfolio = () => {
                                             ))
                                         }
                                     </ul>
-                                    <a href={card.links[0]} target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="top" title="Click to watch">
-                                        <Button variant="warning" size="lg"> <FaRegEye /></Button>
-                                    </a>
 
-                                    <a href={card.links[1]} target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="top" title="View code">
-                                        <Button variant="warning" size="lg"><FaGithub /></Button>
-                                    </a>
+                                    <div>
+                                        <a href={card.links[0]} target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="top" title="Click to watch">
+                                            <Button className={card.links[0] === '' && 'disabled'} variant="warning" size="lg"> <FaRegEye /></Button>
+                                        </a>
+
+                                        <a href={card.links[1]} target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="top" title="View code">
+                                            <Button className={card.links[1] === '' && 'disabled'} variant="warning" size="lg"><FaGithub /></Button>
+                                        </a>
+                                    </div>
+
                                 </div>
                             </div>
                         ))

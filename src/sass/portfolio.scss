@@ -8,17 +8,20 @@
     a {
       color: $contrast-color;
 
-      svg{
+      svg {
         margin-right: 5px;
       }
     }
-    p{
+
+    p {
       width: 80%;
+
       @include medium {
         width: 100%;
       }
     }
   }
+
   .wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -110,13 +113,16 @@
         opacity: 0;
       }
     }
+
     .card:hover {
       -webkit-transform: translateY(20px);
       transform: translateY(20px);
     }
+
     .card:hover:before {
       opacity: 1;
     }
+
     .card:hover .info {
       opacity: 1;
       -webkit-transform: translateY(0px);
