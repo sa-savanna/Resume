@@ -1,17 +1,6 @@
-import React from 'react'
-import { Fragment } from 'react';
+import React, { useState, useEffect } from 'react'
 import { ProgressBar } from 'react-bootstrap';
-
-const data = {
-    languages: ["English", "French", "Dutch", 'Russian', 'Ukranian'],
-    levels: ['C1', 'B1', '2.3', 'Native', 'Native'],
-    info: [
-        { name: 'Work permit', title: 'unlimited' },
-        { name: 'Card residence', title: 'till Feb. 2023' },
-        { name: 'Driver licence', title: "category B" }
-    ]
-}
-
+import axios from "../../../axios"
 
 
 function calculatePercentOfKnowledge(level) {
@@ -50,42 +39,76 @@ function calculatePercentOfKnowledge(level) {
 }
 
 const TableLang = () => {
+
+    const [data, setData] = useState(null)
+
+    useEffect(() => {
+
+        axios.get('/Data.json')
+            .then(res => {
+                console.log(res.data);
+                setData(res.data.Languages)
+            })
+            .catch(error => console.error(error))
+
+    }, [])
+
+
+    let list = []
+    let progressBar = []
+    let infoTitle = []
+    let infoValidity = []
+
+    if (data) {
+        list = data.list.map((i, key) => (
+            <p key={key}>{i.name}</p>
+        ))
+        progressBar = data.list.map((i, key) => (
+            <ProgressBar
+                key={key}
+                now={calculatePercentOfKnowledge(i.level)}
+                label={i.level}
+                animated={i.isLearning}
+            />
+        ))
+        infoTitle = data.info.map((i, key) => (
+            <p key={key}>{i.title}</p>
+        ))
+        infoValidity = data.info.map((i, key) => (
+            <p key={key}>{i.valid}</p>
+        ))
+
+    }
+
+
     return (
-        <Fragment>
+        <>
             <div className="bodyLang">
                 <div>
                     <span className="headLang">Languages</span>
                     <div className="tableLang">
                         <div>
-                            {
-                                data.languages.map(i => (
-                                    <p key={i}>{i}</p>
-                                ))
-                            }
+                            {list}
                         </div>
                         <span>
-                            <ProgressBar now={calculatePercentOfKnowledge(data.levels[0])} label={data.levels[0]} />
-                            <ProgressBar animated now={calculatePercentOfKnowledge(data.levels[1])} label={data.levels[1]} />
-                            <ProgressBar now={calculatePercentOfKnowledge(data.levels[2])} label={data.levels[2]} />
-                            <ProgressBar now={calculatePercentOfKnowledge(data.levels[3])} label={data.levels[3]} />
-                            <ProgressBar now={calculatePercentOfKnowledge(data.levels[4])} label={data.levels[4]} />
+                            {progressBar}
                         </span>
                     </div>
                 </div>
                 <div>
                     <span className="headLang">Info</span>
                     <div className="tableLang">
-                        <p>{data.info[0].name}</p>
-                        <span>{data.info[0].title}</span>
-                        <p>{data.info[1].name}</p>
-                        <span>{data.info[1].title}</span>
-                        <p>{data.info[2].name}</p>
-                        <span>{data.info[2].title}</span>
+                        <div >
+                            {infoTitle}
+                        </div>
+                        <div>
+                            {infoValidity}
+                        </div>
                     </div>
                 </div>
 
             </div>
-        </Fragment>
+        </>
     )
 }
 

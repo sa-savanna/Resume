@@ -2,7 +2,10 @@ import React from 'react'
 import { Col, Row, Jumbotron } from 'react-bootstrap';
 
 
-const JumbotronComponent = ({ data }) => {
+
+
+
+const JumbotronComponent = ({ icons }) => {
     return (
         <Jumbotron>
             <Row className='d-flex flex-row m-0'>
@@ -11,7 +14,7 @@ const JumbotronComponent = ({ data }) => {
                 </Col>
                 <Col lg={12} className="p-0">
                     <ul>
-                        {data.frame.map(y => (
+                        {icons.frames.map(y => (
                             <li key={y.name}>{y.icon}
                                 <span>{y.name}</span>
                             </li>

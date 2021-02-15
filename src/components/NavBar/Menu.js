@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { FiDownload } from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
-import File from "./Junior_Web-Developer_Brussels_Anna_Savchenko.pdf"
+import File from "./Junior_Web-Developer_Bxl_Anna_Savchenko.pdf"
+import { FaEye } from 'react-icons/fa';
 
 
 
@@ -19,7 +19,7 @@ const Menu = () => {
 
     return (
 
-        < Navbar expanded={expanded} collapseOnSelect expand="sm" id="navigation" >
+        <Navbar expanded={expanded} collapseOnSelect expand="sm" id="navigation" >
             <Navbar.Toggle
                 ref={clikedToggler}
                 onClick={() => setExpanded(expanded ? false : "expanded")}
@@ -31,7 +31,7 @@ const Menu = () => {
                     <li><NavLink onClick={() => setExpanded(false)} to="/me">About</NavLink></li>
                     <li><NavLink onClick={() => setExpanded(false)} to="/portfolio">Portfolio</NavLink></li>
                     <li><NavLink onClick={() => setExpanded(false)} to="/contact">Contact</NavLink></li>
-                    <li><NavLink to={File} download target="_new"><FiDownload /> Resume</NavLink></li>
+                    <li><a className="btn" target="_blank" rel="noopener noreferrer" href={File}><FaEye /> Resume</a></li>
                 </ul>
             </Navbar.Collapse>
 

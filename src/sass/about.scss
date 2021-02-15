@@ -1,19 +1,20 @@
 .container2 {
   display: grid;
-  grid-template-areas: "topbar photo" "lang photo" "skills skills" "file file" "footer footer";
+  grid-template-areas: "topbar photo""lang photo""skills skills""file file""footer footer";
   grid-template-columns: 1fr 30%;
   position: relative;
 
   @include medium {
-    grid-template-areas: "photo" "topbar" "lang" "skills" "file" "footer";
+    grid-template-areas: "photo""topbar""lang""skills""file""footer";
     grid-template-columns: 1fr;
   }
 
   .row-skills {
     grid-area: skills;
-    padding: 100px 20px;
-    margin-top: 2em;
+    padding: 0;
+    margin-top: 5em;
     text-align: center;
+
 
     @include large {
       padding: 5px;
@@ -45,18 +46,12 @@
         color: transparent;
         opacity: 0.5;
       }
-      @include large {
-        display: none;
-      }
-    }
-
-    img {
-      width: 100%;
 
       @include large {
         display: none;
       }
     }
+
     span {
       display: none;
 
@@ -71,19 +66,54 @@
       }
     }
 
-    .card-deck {
-      justify-content: space-evenly;
+    .icons {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      padding-top: 0;
+      grid-template-columns: 1fr 1fr;
       width: 100%;
       visibility: hidden;
+      padding: 0;
 
-      @include medium {
-        grid-template-columns: repeat(3, 1fr);
-      }
       @include small {
-        grid-template-columns: repeat(2, 1fr);
+        padding-left: .5rem;
+      }
+
+      h4 {
+        margin-bottom: 2rem;
+      }
+
+      .card-deck.coding {
+        justify-content: space-evenly;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding-top: 0;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+
+        @include medium {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include small {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .card-deck.design {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-top: 0;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+
+        @include medium {
+          grid-template-columns: 1fr;
+        }
+
+        @include small {
+          grid-template-columns: 1fr;
+        }
       }
 
       .card {
@@ -99,8 +129,21 @@
           display: block;
           font-size: 3.1rem;
           color: $primary-color;
+
+          @include small {
+            font-size: 2rem;
+          }
+        }
+
+        .firebaseIcon {
+          height: 48px;
+
+          @include small {
+            height: 33px;
+          }
         }
       }
+
     }
   }
 
@@ -109,6 +152,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 5px;
+    margin-top: 1rem;
 
     @include medium {
       grid-area: file;
@@ -116,6 +160,7 @@
       grid-template-columns: 1fr;
     }
   }
+
   /* ==================jumbotron */
 
   .jumbotron {
