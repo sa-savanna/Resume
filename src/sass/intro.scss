@@ -63,7 +63,8 @@
 
   .sub-table {
     position: absolute;
-    top: 32%;
+    // top: 32%;
+    top: calc(100vh - 67%);
     left: 57%;
 
     @include medium {

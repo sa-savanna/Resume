@@ -49,6 +49,7 @@
           width: 15px;
           transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
         }
+
         &:after {
           content: "";
           width: 3px;
@@ -64,6 +65,7 @@
           content: none;
         }
       }
+
       .timelineContent {
         padding-bottom: 40px;
 
@@ -78,11 +80,13 @@
         ul {
           padding-left: 0px;
           padding-right: 6%;
+          
 
           @include large {
             padding-left: 0px;
             padding-right: 5%;
           }
+
           @include small {
             padding-left: 0px;
           }

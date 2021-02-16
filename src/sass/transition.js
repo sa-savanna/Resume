@@ -1,7 +1,7 @@
-import { TimelineMax as Timeline, Power1 } from 'gsap';
+import { gsap, Power1 } from 'gsap';
 
 const getHome = (node, delay) => {
-    const timeline = new Timeline({ paused: true });
+    const timeline = gsap.timeline({ paused: true });
     const container = node.querySelector('.container2 > div');
 
     timeline
@@ -13,7 +13,7 @@ const getHome = (node, delay) => {
 
 
 const getDefaultTimeline = (node, delay) => {
-    const timeline = new Timeline({ paused: true });
+    const timeline = gsap.timeline({ paused: true });
     const texts = node.querySelectorAll('.inner > div');
 
     timeline
@@ -40,10 +40,11 @@ export const play = (pathname, node, appears) => {
 }
 
 export const exit = (node) => {
-    const timeline = new Timeline({ paused: true });
+    const timeline = gsap.timeline({ paused: true });
 
     timeline.to(node, 0.15, { autoAlpha: 0, ease: Power1.easeOut });
     timeline.play();
 }
+
 
 //https://codesandbox.io/s/github/jeremenichelli/react-view-transition-example/tree/master/?from-embed=&file=/src/timelines/index.js:423-432

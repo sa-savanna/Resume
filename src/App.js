@@ -27,7 +27,6 @@ const App = () => {
     <BrowserRouter>
       <Container fluid>
         <Menu />
-        <Route />
         <Route render={({ location }) => {
           const { pathname, key } = location;
 

@@ -7,23 +7,22 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Skills = ({ icons }) => {
 
-    let app = useRef(null)
+    let skill = useRef(null)
     let tl = gsap.timeline()
-   
+
     useEffect(() => {
-        tl.from('.coding svg', .8, { stagger: 0.15, x: -500, ease: Power3.easeOut })
-            .from('.design svg', .8, { stagger: 0.15, x: 500, ease: Power3.easeOut }, "-=2")
-            .from('.coding p', .8, { stagger: 0.15, scale: 0, ease: Power3.easeOut })
-            .from('.design p', .8, { stagger: 0.15, scale: 0, ease: Power3.easeOut },"-=2")
-        gsap.to(app, 0, { css: { visibility: "visible" } })
+        tl.from('.coding p', .8, { stagger: 0.15, scale: 0, ease: Power3.easeIn })
+            .from('.design p', .8, { stagger: 0.15, scale: 0, ease: Power3.easeIn }, "-=2")
+        gsap.to(skill, 0, { opacity: 1 })
 
         ScrollTrigger.create({
             animation: tl,
-            trigger: app,
+            trigger: skill,
             // markers: true,
             start: 'top 80%',
             toggleActions: "restart none none restart"
         })
+
     }, [tl])
 
     return (
@@ -32,7 +31,7 @@ const Skills = ({ icons }) => {
                 <span data-text="Skills" className="headLang">Skills</span>
                 <span>SKILLS</span>
             </Col>
-            <Col ref={el => app = el} lg={9} md={9} className="icons">
+            <Col ref={el => skill = el} lg={9} md={9} className="icons">
                 <div>
                     <h4>Coding</h4>
                     <CardDeck className="coding">

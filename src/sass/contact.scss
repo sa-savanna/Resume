@@ -6,6 +6,7 @@
     border: solid 1px #00000033;
     position: relative;
   }
+
   .input-contact {
     height: 40px;
     width: 100%;
@@ -28,7 +29,6 @@
   }
 
   .btn-box {
-    background: $primary-color;
     padding: 10px 50px;
     border-radius: 0;
     color: #fff;
@@ -37,11 +37,13 @@
     letter-spacing: 2px;
     font-weight: 500;
     border-color: $primary-color;
+    transition: all 0.5s ease-in-out;
+    background-size: 300% auto;
+    background-image: linear-gradient(to right, $primary-color 0%, #fc6338 60%, $primary-color 100%);
 
     &:focus,
     &:hover {
-      background: #f59f00;
-      color: #fff;
+      background-position: right center;
     }
   }
 

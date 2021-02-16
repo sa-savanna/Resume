@@ -43,6 +43,7 @@
         line-height: 1.1;
         background: linear-gradient(0deg, $background-color 0, transparent 90%);
         -webkit-background-clip: text;
+        background-clip: text;
         color: transparent;
         opacity: 0.5;
       }
@@ -70,7 +71,6 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       width: 100%;
-      visibility: hidden;
       padding: 0;
 
       @include small {
@@ -158,6 +158,17 @@
       grid-area: file;
       display: grid;
       grid-template-columns: 1fr;
+    }
+
+    .btn-primary {
+      transition: all 0.5s ease-in-out;
+      background-size: auto 300%;
+      background-image: linear-gradient(to bottom, $contrast-color 0%, #0c00b1 60%, $contrast-color 100%);
+
+      &:focus,
+      &:hover {
+        background-position: bottom center;
+      }
     }
   }
 

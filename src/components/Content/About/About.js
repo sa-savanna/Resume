@@ -48,16 +48,16 @@ const icons = {
 const About = () => {
 
     const [data, setData] = useState(null)
-
+    
     useEffect(() => {
-
+       
         axios.get('/Data.json')
             .then(res => {
                 // console.log(res.data);
                 setData(res.data.About)
             })
             .catch(error => console.error(error))
-
+       
     }, [])
 
     return (

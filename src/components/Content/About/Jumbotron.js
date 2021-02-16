@@ -1,10 +1,6 @@
 import React from 'react'
 import { Col, Row, Jumbotron } from 'react-bootstrap';
 
-
-
-
-
 const JumbotronComponent = ({ icons }) => {
     return (
         <Jumbotron>
