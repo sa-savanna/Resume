@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { ProgressBar } from 'react-bootstrap';
-import axios from "../../../axios"
 
 
 function calculatePercentOfKnowledge(level) {
@@ -38,27 +37,14 @@ function calculatePercentOfKnowledge(level) {
     }
 }
 
-const TableLang = () => {
-
-    const [data, setData] = useState(null)
-
-    useEffect(() => {
-
-        axios.get('/Data.json')
-            .then(res => {
-                console.log(res.data);
-                setData(res.data.Languages)
-            })
-            .catch(error => console.error(error))
-
-    }, [])
-
+const TableLang = ({data}) => {
 
     let list = []
     let progressBar = []
     let infoTitle = []
     let infoValidity = []
 
+    
     if (data) {
         list = data.list.map((i, key) => (
             <p key={key}>{i.name}</p>

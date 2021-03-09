@@ -4,7 +4,7 @@ import { gsap } from "gsap"
 
 const Education = ({ data }) => {
     const [isVisible, setVisibility] = useState(false)
-
+    
 
     let tl = gsap.timeline()
 

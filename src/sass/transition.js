@@ -1,9 +1,10 @@
 import { gsap, Power1 } from 'gsap';
 
-const getHome = (node, delay) => {
+
+const getAbout = (node, delay) => {
     const timeline = gsap.timeline({ paused: true });
     const container = node.querySelector('.container2 > div');
-
+    
     timeline
         .from(node, 0.3, { display: 'none', autoAlpha: 0, delay, ease: Power1.easeIn })
         .staggerFrom(container, 0.5, { autoAlpha: 0, y: 25, ease: Power1.easeInOut }, 0.5);
@@ -11,14 +12,13 @@ const getHome = (node, delay) => {
     return timeline;
 }
 
-
 const getDefaultTimeline = (node, delay) => {
     const timeline = gsap.timeline({ paused: true });
     const texts = node.querySelectorAll('.inner > div');
 
     timeline
         .from(node, 0, { display: 'none', autoAlpha: 0, delay })
-        .staggerFrom(texts, 0.4, { autoAlpha: 0, x: -150, ease: Power1.easeOut }, 0.5); // 0.4-duration; 0.5-second  div delays for .5ms from the first
+        .staggerFrom(texts, 0.4, { autoAlpha: 0, x: -50, ease: Power1.easeOut }, 0.5); // 0.4-duration; 0.5-second  div delays for .5ms from the first
 
     return timeline;
 }
@@ -30,7 +30,7 @@ export const play = (pathname, node, appears) => {
     let timeline
 
     if (pathname === '/me')
-        timeline = getHome(node, delay);
+        timeline = getAbout(node, delay);
     else
         timeline = getDefaultTimeline(node, delay);
 

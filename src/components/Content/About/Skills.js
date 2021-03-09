@@ -11,9 +11,9 @@ const Skills = ({ icons }) => {
     let tl = gsap.timeline()
 
     useEffect(() => {
-        tl.from('.coding p', .8, { stagger: 0.15, scale: 0, ease: Power3.easeIn })
-            .from('.design p', .8, { stagger: 0.15, scale: 0, ease: Power3.easeIn }, "-=2")
-        gsap.to(skill, 0, { opacity: 1 })
+        tl.from('.card svg', .8, { stagger: 0.15, y: 30, opacity: 0, duration: .3, ease: Power3.easeIn })
+            .from('.card p', .8, { stagger: 0.15, scale: 0, ease: Power3.easeIn }, "-=2")
+        gsap.to(skill, 0, { css: {opacity: 1 } })
 
         ScrollTrigger.create({
             animation: tl,
@@ -29,14 +29,14 @@ const Skills = ({ icons }) => {
         <Row className="row-skills">
             <Col lg={3} md={3} className="p-0">
                 <span data-text="Skills" className="headLang">Skills</span>
-                <span>SKILLS</span>
+                <span className='headHided'>SKILLS</span>
             </Col>
-            <Col ref={el => skill = el} lg={9} md={9} className="icons">
+            <Col lg={9} md={9} className="icons" >
                 <div>
                     <h4>Coding</h4>
-                    <CardDeck className="coding">
+                    <CardDeck className="coding" ref={el => skill = el}>
                         {icons.coding.map(icon => (
-                            <Card key={icon.name}>
+                            <Card key={icon.name} >
                                 {icon.icon}
                                 <Card.Body>
                                     <Card.Text>{icon.name}</Card.Text>
@@ -47,7 +47,7 @@ const Skills = ({ icons }) => {
                 </div>
                 <div>
                     <h4>Design</h4>
-                    <CardDeck className="design">
+                    <CardDeck className="design" ref={el => skill = el}>
                         {icons.design.map(icon => (
                             <Card key={icon.name}>
                                 {icon.icon}
