@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { DataContext } from "../../context/DataContext"
-import { TimelineMax, Circ } from "gsap"
+import { gsap, Circ } from "gsap"
 import { FaAt, FaWhatsapp, FaLinkedinIn } from 'react-icons/fa';
 
 const Intro = () => {
@@ -11,7 +11,7 @@ const Intro = () => {
 
     useEffect(() => {
 
-        var tl = new TimelineMax({ repeat: -1 });
+        var tl = gsap.timeline({ repeat: -1 });
 
         tl.to(".bounce", .1, { transformOrigin: "50% 100%", scaleY: 0.35, yoyo: true, repeat: 1 })
             .to(".bounce", .75, { y: -48, ease: Circ.easeOut, yoyo: true, repeat: 1 });
