@@ -36,7 +36,7 @@ const Education = ({ data }) => {
                                 </div>
                                 <div className="timelineMarker"></div>
                                 <div className="timelineContent">
-                                    <h5 className="timelineTitle">{list.instituion}</h5>
+                                    <h5>{list.instituion}</h5>
                                     <p>{list.title}
                                         <em> {list.subtitle} </em>
                                     </p>

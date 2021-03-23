@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap';
 import { gsap } from "gsap"
 
@@ -30,14 +30,28 @@ const Experience = ({ data }) => {
                 <ul>
                     {
                         data && data.map((list, i) => (
-                            <li key={i} className="exp1">
+                            <li className='exp1' key={i}>
                                 <div className="timelineMarker"></div>
                                 <div className="timelineInfo">
-                                    <p>{list.time}</p>
+                                    <p className="timelineTitle">{list.time}</p>
                                 </div>
                                 <div className="timelineContent">
                                     <h5>{list.position}</h5>
-                                    <p className="timelineTitle">{list.company}{list.sector} </p>
+                                    <p className="timelineTitle">{list.sector} </p>
+
+                                    {list.skills && list.skills.map(y => (
+                                        <>
+                                            <span><u>{y.name}</u></span>
+                                            <ul>
+                                                {y.responsibilities && y.responsibilities.map(z => (
+                                                    <li>{z}</li>
+                                                ))
+                                                }
+                                            </ul>
+                                            <br />
+                                        </>
+                                    ))
+                                    }
                                 </div>
                             </li>
                         ))
