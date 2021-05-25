@@ -29,7 +29,7 @@ const Experience = ({ data }) => {
                 isVisible &&
                 <ul>
                     {
-                        data && data.map((list, i) => (
+                        data && data.sort((a, b) => b.id > a.id ? 1 : -1).map((list, i) => (
                             <li className='exp1' key={i}>
                                 <div className="timelineMarker"></div>
                                 <div className="timelineInfo">

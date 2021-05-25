@@ -4,11 +4,10 @@ import { gsap } from "gsap"
 
 const Education = ({ data }) => {
     const [isVisible, setVisibility] = useState(false)
-    
-
+  
     let tl = gsap.timeline()
 
-    function toggle() {
+    const toggle = () => {
         setVisibility(!isVisible);
     }
 
@@ -29,7 +28,7 @@ const Education = ({ data }) => {
                 isVisible &&
                 <ul>
                     {
-                        data && data.map((list, i) => (
+                        data && data.sort((a, b) => b.id > a.id ? 1 : -1).map((list, i) => (
                             <li key={i} className="exp">
                                 <div className="timelineInfo">
                                     <p>{list.time}</p>

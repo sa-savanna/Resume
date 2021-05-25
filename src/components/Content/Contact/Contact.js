@@ -26,7 +26,7 @@ function Contact() {
                             <EmailSend />
                         </Col>
                         {loading ? <Loader /> :
-                            <Col md={6} className="col-left" >
+                            <Col md={6} className="col-right" >
                                 <h5>{data.city}</h5>
                                 <div className="contact-info">
                                     <Gsm data={data && data} />

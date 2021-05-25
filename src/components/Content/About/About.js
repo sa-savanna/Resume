@@ -13,7 +13,7 @@ import { FaFigma, FaSass } from 'react-icons/fa';
 import { DiLinux, DiGithubBadge, DiNodejsSmall, DiMongodb, DiJavascript1, DiNodejs, DiReact, DiVisualstudio } from 'react-icons/di';
 import { ReactComponent as Postman } from './pm-gray-horiz.svg'
 import { ReactComponent as Firebase } from './firebase-icon.svg'
-import { SiInkscape, SiAdobephotoshop, SiBlender, SiRedux } from 'react-icons/si';
+import { SiInkscape, SiAdobephotoshop, SiBlender, SiRedux, SiMysql } from 'react-icons/si';
 import Loader from '../../Loader/Loader';
 
 
@@ -40,6 +40,7 @@ const icons = {
         { name: "Redux", icon: <SiRedux /> },
         { name: "NodeJS", icon: <DiNodejs /> },
         { name: "MongoDB", icon: <DiMongodb /> },
+        { name: "MySQL", icon: <SiMysql /> },
         { name: "Firebase", icon: <Firebase className="firebaseIcon" /> }
     ]
 }

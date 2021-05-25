@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
-import File from "./Junior_web-developer_Anna_Savchenko.pdf"
+import File from "./Junior_Frontend_Bxl_Anna_S.pdf"
 import { FaEye } from 'react-icons/fa';
 
 

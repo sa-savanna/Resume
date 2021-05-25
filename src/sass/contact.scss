@@ -44,10 +44,11 @@
     &:focus,
     &:hover {
       background-position: right center;
+      cursor: pointer;
     }
   }
 
-  .col-left {
+  .col-right {
     padding-left: 30px;
     padding-top: 30px;
 

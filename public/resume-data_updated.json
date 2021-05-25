@@ -1,0 +1,202 @@
+{
+  "Data": {
+    "about": {
+      "Education": [
+        {
+          "id": 1,
+          "instituion": "Metallurgical Academy of Ukraine, Dnipro",
+          "subtitle": "Flemish Master's equivalent",
+          "time": "2001-2006",
+          "title": "Master of Heat-and-power"
+        },
+        {
+          "id": 2,
+          "instituion": "Intec Brussel, Brussels",
+          "time": "Feb. 2020 - Sep. 2020",
+          "title": "Web-developer Certificate"
+        },
+        {
+          "id": 3,
+          "instituion": "Digital City, Brussels",
+          "time": "April, 2021",
+          "title": "SQL databases"
+        }
+      ],
+      "Experience": [
+        {
+          "id": 1,
+          "position": "Office-administration positions | Ukraine",
+          "sector": "Education industry, Agriculture, Science, Mining, Food production, Guard services",
+          "skills": [
+            {
+              "name": "Organizational skills",
+              "responsibilities": [
+                "Kept records and controlled dead-lines activities",
+                "Sorted information and documentation into an organized system with high colleagues appreciation",
+                "Automized controlling system by creating databases and reminders through Office software"
+              ]
+            },
+            {
+              "name": "Technical skills",
+              "responsibilities": [
+                "Operated equipment, software and network",
+                "Designed technical 2D/3D drawings using AutoCAD, SolidWorks",
+                "Invoicing, report, payroll, employee time tracking, cash flow management, logistic control"
+              ]
+            },
+            {
+              "name": "Marketing",
+              "responsibilities": [
+                "Created logo, mockup of a product",
+                "Designed brochures, advertisement banners using Photoshop, Corel Draw",
+                "Created and updated web-site, social media content"
+              ]
+            }
+          ],
+          "time": "2005 - 2017"
+        },
+
+        {
+          "id": 2,
+          "position": "Moved to Belgium",
+          "time": "Jun 2017"
+        },
+        {
+          "id": 3,
+          "position": "French, Dutch learning",
+          "time": "Jun 2017 - current"
+        }
+      ],
+      "languages": {
+        "info": [
+          {
+            "title": "Card residence",
+            "valid": "till Feb. 2023"
+          },
+          {
+            "title": "Driver licence",
+            "valid": "category B"
+          },
+          {
+            "title": "Work permit",
+            "valid": "unlimited"
+          }
+        ],
+        "list": [
+          {
+            "isLearning": false,
+            "level": "C1",
+            "name": "English"
+          },
+          {
+            "isLearning": true,
+            "level": "B1",
+            "name": "French"
+          },
+          {
+            "isLearning": false,
+            "level": "2.3",
+            "name": "Dutch"
+          },
+          {
+            "isLearning": false,
+            "level": "Native",
+            "name": "Russian"
+          },
+          {
+            "isLearning": false,
+            "level": "Native",
+            "name": "Ukranian"
+          }
+        ]
+      },
+      "topbar": {
+        "header": {
+          "name": "Home",
+          "paragraph": " / About me",
+          "title": "About Me"
+        }
+      }
+    },
+    "contact": {
+      "city": "Belgium, Brussels",
+      "email": "savanna.be.ua@gmail.com",
+      "header": {
+        "name": "Home",
+        "paragraph": " / Contact Me",
+        "title": "Contact Me"
+      },
+      "linkdIn": "https://www.linkedin.com/in/anna-savchenko",
+      "phone": "+32 493 33 90 32"
+    },
+    "portfolio": {
+      "cards": [
+        {
+          "frame": "HTML",
+          "img": "./BookFinder.png",
+          "links": {
+            "git": "https://github.com/sa-savanna/BookFinder",
+            "site": "https://sa-savanna.github.io/BookFinder/"
+          },
+          "list": ["REST API", "Styling"],
+          "title": "Google books searcher"
+        },
+        {
+          "frame": "HTML",
+          "img": "./weather.png",
+          "links": {
+            "git": "https://github.com/sa-savanna/WeatherApp",
+            "site": "https://sa-savanna.github.io/WeatherApp/"
+          },
+          "list": ["REST API", "JavaScript"],
+          "title": "Wheather forecast"
+        },
+        {
+          "frame": "Node",
+          "img": "./iceCream.png",
+          "links": {
+            "git": "https://github.com/sa-savanna/Node-routing",
+            "site": "https://icecream-node-routing.herokuapp.com/"
+          },
+          "list": ["NodeJS Routing", "Registration form", "Connect to MongoDB"],
+          "title": "Ice cream recipes"
+        },
+        {
+          "frame": "React",
+          "img": "./Voyager.png",
+          "links": {
+            "git": "https://github.com/sa-savanna/React-Voyager.git",
+            "site": "https://sa-savanna.github.io/React-Voyager/#/"
+          },
+          "list": ["React hooks", "Using multiple API", "Team work"],
+          "title": "Travel site (group project)"
+        },
+        {
+          "frame": "React",
+          "img": "./Burger.png",
+          "links": {
+            "git": "https://github.com/sa-savanna/Burger-Builder",
+            "site": "https://burgerdatabase-4cbd2.web.app/"
+          },
+          "list": ["React hooks", "Connect and deploy to Firebase", "Redux"],
+          "title": "Order your favorite Burger"
+        },
+        {
+          "frame": "Angular",
+          "img": "./todo.png",
+          "links": {
+            "git": "",
+            "site": "https://angular-todo-app-2dcd0.web.app/"
+          },
+          "list": ["Understanding Angular", "Connect and deploy to Firebase"],
+          "title": "Angular Todo exersice"
+        }
+      ],
+      "header": {
+        "name": "Home",
+        "paragraph": " / Portfolio",
+        "title": "Portfolio"
+      }
+    }
+  }
+}
