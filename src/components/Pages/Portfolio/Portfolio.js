@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Image, Button, ToggleButtonGroup, ToggleButton, Card } from 'react-bootstrap';
+import { Image, Button, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 import { FaGithub, FaRegEye, FaNode, FaReact } from 'react-icons/fa';
 import { FiFigma } from 'react-icons/fi';
 import { DiJavascript1 } from 'react-icons/di';
