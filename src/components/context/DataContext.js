@@ -13,12 +13,10 @@ const DataProvider = props => {
     const getData = useCallback(() => {
         axios.get(`/Data.json`)
             .then(res => {
-                // console.log(res.data);
                 setLoading(true)
                 setDataAbout(res.data.about)
                 setDataContact(res.data.contact)
                 setDataPortfolio(res.data.portfolio)
-                // setData(res.data)
                 setLoading(false)
             })
             .catch(error => console.error(error))
@@ -28,6 +26,7 @@ const DataProvider = props => {
         getData()
     }, [getData])
 
+     
 
     return (
         <DataContext.Provider

@@ -12,15 +12,16 @@ const TopBar = ({ data }) => {
         <Header
           header={data && data.header.title}
           paragraph={data && data.header.paragraph}
-          name={data && data.header.name} />
+          name={data && data.header.name}
+        />
 
         <div className="aboutme">
           <p>
             Thanks to my passion for computers, non-stop learning attitude for applications
-          and new technologies, I decided to continue developing my talents in the IT field. <hr />
+            and new technologies, I decided to continue developing my talents in the IT field. <hr />
 
             I am improving ReactJS skills, <a href="https://www.mongodb.com/mern-stack" target="_blank" rel="noopener noreferrer">MERN stack
-            <sup><FaExternalLinkAlt /></sup>  </a> . <br />
+              <sup><FaExternalLinkAlt /></sup>  </a> . <br />
             - Currently I am learning <b> Python</b>. <br />
             - Interested in Data visualizing and 2D/3D design.
           </p>

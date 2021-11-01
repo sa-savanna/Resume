@@ -1,22 +1,22 @@
 import React, { Suspense, lazy } from 'react'
 import './sass/App.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Menu from './components/NavBar/Menu';
+import Menu from './components/Menu/Menu';
 import { Container } from 'react-bootstrap';
-import Intro from './components/Content/Intro/Intro'
+import Intro from './components/Pages/Intro/Intro'
 import Loader from "./components/Loader/Loader"
 
 
 const asyncAbout = lazy(() => {
-  return import('./components/Content/About/About')
+  return import('./components/Pages/About/About')
 })
 
 const asyncPortfolio = lazy(() => {
-  return import('./components/Content/Portfolio/Portfolio')
+  return import('./components/Pages/Portfolio/Portfolio')
 })
 
 const asyncContact = lazy(() => {
-  return import('./components/Content/Contact/Contact')
+  return import('./components/Pages/Contact/Contact')
 })
 
 

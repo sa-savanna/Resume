@@ -1,9 +1,11 @@
 .box-intro {
+  justify-items: center;
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   height: 100vh;
-  justify-items: center;
+  background: no-repeat center url("https://image.freepik.com/free-vector/white-abstract-wallpaper_23-2148830027.jpg");
+  background-size: cover;
 
   .box-headline {
     font-size: 4.5rem;
@@ -101,6 +103,8 @@
       }
     }
   }
+
+
   .contact-info {
     position: absolute;
     bottom: 0;
@@ -123,6 +127,7 @@
           transform: scale(1.5);
         }
       }
+
       @include small {
         padding: 0 1rem;
       }
@@ -135,5 +140,5 @@
       justify-content: center;
     }
   }
-  
+
 }

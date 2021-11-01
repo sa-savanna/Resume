@@ -9,20 +9,23 @@ import { DataContext } from "../../context/DataContext"
 
 import { BsBootstrap } from 'react-icons/bs';
 import { AiOutlineHtml5 } from 'react-icons/ai';
-import { FaFigma, FaSass } from 'react-icons/fa';
+import { FaSass } from 'react-icons/fa';
 import { DiLinux, DiGithubBadge, DiNodejsSmall, DiMongodb, DiJavascript1, DiNodejs, DiReact, DiVisualstudio } from 'react-icons/di';
-import { ReactComponent as Postman } from './pm-gray-horiz.svg'
+import { FiFigma } from 'react-icons/fi';
+import { SiInkscape, SiAdobephotoshop, SiRedux, SiMysql } from 'react-icons/si';
+
+import { ReactComponent as Postman } from './postman.svg'
 import { ReactComponent as Firebase } from './firebase-icon.svg'
-import { SiInkscape, SiAdobephotoshop, SiBlender, SiRedux, SiMysql } from 'react-icons/si';
+import { ReactComponent as Draw } from './draw-io.svg'
 import Loader from '../../Loader/Loader';
 
 
 const icons = {
     design: [
-        { name: "Figma", icon: <FaFigma /> },
+        { name: "Figma", icon: <FiFigma /> },
         { name: "Inkskape", icon: <SiInkscape /> },
-        { name: "Blender", icon: <SiBlender /> },
-        { name: "Photoshop", icon: <SiAdobephotoshop /> }
+        { name: "Photoshop", icon: <SiAdobephotoshop /> },
+        { name: "Draw.io diagrams", icon: <Draw /> },
     ],
     frames: [
         { name: "GitHub", icon: <DiGithubBadge style={{ fontSize: '4em' }} /> },
@@ -53,7 +56,7 @@ const About = () => {
 
     return (
         <div className="container2">
-            {loading ? <Loader/> :
+            {loading ? <Loader /> :
                 <>
                     <TopBar data={data && data.topbar} />
                     <TableLang data={data && data.languages} />

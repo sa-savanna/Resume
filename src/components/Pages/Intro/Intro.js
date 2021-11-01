@@ -4,7 +4,7 @@ import { gsap, Circ } from "gsap"
 import { FaAt, FaWhatsapp, FaLinkedinIn } from 'react-icons/fa';
 
 const Intro = () => {
- 
+
     const { dataPortfolio, loading } = useContext(DataContext);
     const data = dataPortfolio
 
@@ -18,15 +18,13 @@ const Intro = () => {
 
     }, [])
 
-  
-    // console.log(data);
 
     return (
         <>
             <div className="box-intro">
                 <div className="header-table">
                     <h1 className='box-headline'>Hello
-                    <div className="bounce"></div>
+                        <div className="bounce"></div>
                     </h1>
                     <h1 className='box-headline'>I am</h1>
                     <h1 className='box-headline'>anna</h1>
@@ -49,8 +47,7 @@ const Intro = () => {
                     </div>
                 }
             </div>
-
-        </ >
+        </>
     )
 }
 

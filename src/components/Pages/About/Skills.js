@@ -11,7 +11,7 @@ const Skills = ({ icons }) => {
     let tl = gsap.timeline()
 
     useEffect(() => {
-        tl.from('.card svg', .8, { stagger: 0.15, y: 30, opacity: 0, duration: .3, ease: Power3.easeIn })
+        tl.from('.card svg', 1, { stagger: 0.15, y: 30, opacity: 0, duration: .2, ease: Power3.easeIn })
             .from('.card p', .8, { stagger: 0.15, scale: 0, ease: Power3.easeIn }, "-=2")
         gsap.to(skill, 0, { css: {opacity: 1 } })
 

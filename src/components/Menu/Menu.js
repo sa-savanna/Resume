@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
-import File from "./Junior_Frontend_Bxl_Anna_S.pdf"
+import File from "./Junior React-Developer.pdf"
 import { FaEye } from 'react-icons/fa';
 
 
@@ -12,17 +12,15 @@ const Menu = () => {
 
     useEffect(() => {
         clikedToggler.current.click()
-
+        
     }, [])
-
-
 
     return (
 
         <Navbar expanded={expanded} collapseOnSelect expand="sm" id="navigation" >
             <Navbar.Toggle
                 ref={clikedToggler}
-                onClick={() => setExpanded(expanded ? false : "expanded")}
+                onClick={() => setExpanded(expanded ? false : true)}
                 onBlur={() => setExpanded(false)}
                 aria-controls="responsive-navbar-nav" />
 

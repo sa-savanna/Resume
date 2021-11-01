@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Col, Row, Button, Alert} from 'react-bootstrap'
+import { Form, Col, Row, Button, Alert } from 'react-bootstrap'
 import ReCAPTCHA from "react-google-recaptcha";
 import { MdArrowDownward } from 'react-icons/md';
 import Axios from 'axios';
@@ -62,7 +62,7 @@ const EmailSend = () => {
 
     return (
         <Form onSubmit={handleOnSubmit} id="contactform">
-            <Row>
+            <Row className='mr-0'>
                 <Col md={6}>
                     <Form.Group >
                         <Form.Label htmlFor="email">Email</Form.Label>
@@ -115,10 +115,10 @@ const EmailSend = () => {
                 <Col md={12}>
                     <p>Please verify <MdArrowDownward /> </p>
                     <ReCAPTCHA
+                        style={{ width: "150px" }}
                         sitekey="6LegBsMZAAAAAD3CnoJq8ttc7PGrZm7OOF9VaEdS"
                         onChange={onChange}
                     />
-
                     <Button
                         className="d-inline-block btn btn-box"
                         variant="warning"
@@ -126,7 +126,7 @@ const EmailSend = () => {
                         disabled={serverState.submitting}
                     >
                         Send
-                </Button>
+                    </Button>
 
                     {serverState.status && (
                         <Alert className="mt-2" variant="info">
