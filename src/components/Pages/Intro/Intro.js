@@ -5,7 +5,7 @@ import { FaAt, FaWhatsapp, FaLinkedinIn } from 'react-icons/fa';
 
 const Intro = () => {
 
-    const { dataPortfolio, loading } = useContext(DataContext);
+    const { dataPortfolio, dataContact, loading } = useContext(DataContext);
     const data = dataPortfolio
 
 
@@ -38,11 +38,11 @@ const Intro = () => {
                 </div>
                 {!loading &&
                     <div className="contact-info">
-                        <a href={`https://api.whatsapp.com/send/?phone=${data.phone}&text=Hello+Anna%2C&app_absent=0`} target='blank' rel="noopener noreferrer"
+                        <a href={`https://api.whatsapp.com/send/?phone=${dataContact.phone}&text=Hello+Anna%2C&app_absent=0`} target='blank' rel="noopener noreferrer"
                             title="Via whatsapp"><FaWhatsapp /> </a>
-                        <a href={`mailto:${data.email}`} target='blank' rel="noopener noreferrer">
+                        <a href={`mailto:${dataContact.email}`} target='blank' rel="noopener noreferrer">
                             <FaAt /> </a>
-                        <a href={data.linkdIn} target='blank' rel="noopener noreferrer">
+                        <a href={dataContact.linkdIn} target='blank' rel="noopener noreferrer">
                             <FaLinkedinIn /> </a>
                     </div>
                 }
