@@ -5,8 +5,7 @@ import { FaAt, FaWhatsapp, FaLinkedinIn } from 'react-icons/fa';
 
 const Intro = () => {
 
-    const { dataPortfolio, dataContact, loading } = useContext(DataContext);
-    const data = dataPortfolio
+    const {dataContact, loading } = useContext(DataContext);
 
 
     useEffect(() => {
@@ -23,15 +22,15 @@ const Intro = () => {
         <>
             <div className="box-intro">
                 <div className="header-table">
-                    <h1 className='box-headline'>Hello
+                    <h1 className='header-me'>Hello
                         <div className="bounce"></div>
                     </h1>
-                    <h1 className='box-headline'>I am</h1>
-                    <h1 className='box-headline'>anna</h1>
-                    <p>savchenko</p>
+                    <h1 className='header-me'>I am</h1>
+                    <h1 className='header-me'>anna</h1>
+                    <p className='surname'>savchenko</p>
                 </div>
 
-                <div className='sub-table'>
+                <div className='role'>
                     <h5>junior</h5>
                     <h5>web</h5>
                     <h5>developer</h5>

@@ -1,87 +1,85 @@
 .box-intro {
-  justify-items: center;
   display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  grid-template-areas: ". header role  .";
+  place-items: center;
   height: 100vh;
-  background: no-repeat center url("https://image.freepik.com/free-vector/white-abstract-wallpaper_23-2148830027.jpg");
+  background: no-repeat center url("https://img.freepik.com/free-vector/gradient-background-wave-minimalist-style_483537-4951.jpg?t=st=1720815062~exp=1720818662~hmac=a026b51b1014af0654aadc5c36464313e4e23084b9e8b229838367be44bd4a82&w=1800");
   background-size: cover;
 
-  .box-headline {
-    font-size: 4.5rem;
-    line-height: 1;
-    color: $dark-color;
-    font-weight: 700;
-    display: flex;
-    align-items: baseline;
+  @include small {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "."
+      "header"
+      "role"
+      ".";
 
-    @include medium {
+    place-items: center;
+  }
+
+  .header-table {
+    grid-area: header;
+
+    .header-me {
+      font-size: 4.5rem;
+      line-height: 1;
+      color: $dark-color;
+      font-weight: 700;
+      display: flex;
+      align-items: baseline;
+
+      @include medium {
+        font-size: 4rem;
+      }
+
+      @include small {
+        font-size: 3rem;
+      }
+
+      @include Exsmall {
+        font-size: 2rem;
+      }
+
+      .bounce {
+        background-color: $primary-color;
+        height: 15px;
+        width: 15px;
+        transform-origin: bottom;
+        border-radius: 50%;
+      }
+    }
+
+
+    .surname {
+      letter-spacing: 4px;
       font-size: 4rem;
-    }
+      text-transform: uppercase;
+      margin: 0;
+      position: absolute;
+      transform: translate(10%, -50%);
+      font-weight: 600;
+      color: $dimmed-color;
 
-    @include small {
-      font-size: 3rem;
-    }
+      @include medium {
+        font-size: 3rem;
+      }
 
-    @include Exsmall {
-      font-size: 2rem;
-    }
+      @include small {
+        font-size: 2rem !important;
+      }
 
-    .bounce {
-      background-color: $primary-color;
-      height: 15px;
-      width: 15px;
-      transform-origin: bottom;
-      border-radius: 50%;
-    }
-  }
-
-  p {
-    letter-spacing: 4px;
-    font-size: 4rem;
-    text-transform: uppercase;
-    margin: 0;
-    position: relative;
-    left: 1rem;
-    top: -4rem;
-    font-weight: 600;
-    color: $dimmed-color;
-
-    @include medium {
-      font-size: 3rem;
-    }
-
-    @include small {
-      font-size: 1rem !important;
-      top: -1.5rem !important;
-    }
-
-    @include Exsmall {
-      left: 7%;
-      top: -1rem !important;
-      font-size: 0.7rem !important;
+      @include Exsmall {
+        // transform: translate(10%, -90%);
+        font-size: 1rem !important;
+      }
     }
   }
 
-  .sub-table {
-    position: absolute;
-    // top: 32%;
-    top: calc(100vh - 67%);
-    left: 57%;
-
-    @include medium {
-      top: 35%;
-    }
-
-    @include small {
-      top: 70%;
-      left: 32%;
-    }
-
-    @include Exsmall {
-      top: 64%;
-      left: 28%;
-    }
+  .role {
+    grid-area: role;
 
     h5 {
       letter-spacing: 4px;
@@ -102,8 +100,8 @@
         font-size: 0.8rem;
       }
     }
-  }
 
+  }
 
   .contact-info {
     position: absolute;

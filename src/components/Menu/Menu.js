@@ -26,6 +26,7 @@ const Menu = () => {
 
             <Navbar.Collapse>
                 <ul>
+                    <li><NavLink onClick={() => setExpanded(false)} to="/">Home</NavLink></li>
                     <li><NavLink onClick={() => setExpanded(false)} to="/me">About</NavLink></li>
                     <li><NavLink onClick={() => setExpanded(false)} to="/portfolio">Portfolio</NavLink></li>
                     <li><NavLink onClick={() => setExpanded(false)} to="/contact">Contact</NavLink></li>

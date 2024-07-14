@@ -22,7 +22,7 @@ const TopBar = ({ data }) => {
 
             I am improving ReactJS skills, <a href="https://www.mongodb.com/mern-stack" target="_blank" rel="noopener noreferrer">MERN stack
               <sup><FaExternalLinkAlt /></sup>  </a> . <br />
-            - Currently I am learning <b> Python</b>. <br />
+            - Currently I am learning <b> SQL and Python</b>. <br />
             - Interested in Data visualizing and 2D/3D design.
           </p>
           <p> At the same time, I am learning back-end to grow knowledge in all stages of development.
