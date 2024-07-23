@@ -23,7 +23,7 @@ import Loader from '../../Loader/Loader';
 const icons = {
     design: [
         { name: "Figma", icon: <FiFigma /> },
-        { name: "Inkskape", icon: <SiInkscape /> },
+        { name: "Inkscape", icon: <SiInkscape /> },
         { name: "Photoshop", icon: <SiAdobephotoshop /> },
         { name: "Draw.io diagrams", icon: <Draw /> },
     ],
@@ -72,7 +72,8 @@ const About = () => {
                         </div>
                     </div>
 
-                    <JumbotronComponent icons={icons} />
+                    {/* <JumbotronComponent icons={icons} /> */}
+                    <JumbotronComponent data={data && data.Icons} />
                 </>
             }
         </div>
