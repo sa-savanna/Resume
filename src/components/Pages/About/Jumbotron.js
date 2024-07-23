@@ -14,7 +14,7 @@ const JumbotronComponent = ({ icons }) => {
                             <li key={y.name}>{y.icon}
                                 <span>{y.name}</span>
                             </li>
-                        ))}
+                        ))} 
                     </ul>
                 </Col>
             </Row>

@@ -72,8 +72,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    {/* <JumbotronComponent icons={icons} /> */}
-                    <JumbotronComponent data={data && data.Icons} />
+                    <JumbotronComponent icons={icons} />
                 </>
             }
         </div>
