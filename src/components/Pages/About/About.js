@@ -9,14 +9,18 @@ import { DataContext } from "../../context/DataContext"
 
 import { BsBootstrap } from 'react-icons/bs';
 import { AiOutlineHtml5 } from 'react-icons/ai';
-import { FaSass } from 'react-icons/fa';
-import { DiLinux, DiGithubBadge, DiNodejsSmall, DiMongodb, DiJavascript1, DiNodejs, DiReact, DiVisualstudio } from 'react-icons/di';
+import { FaSass, FaProjectDiagram } from 'react-icons/fa';
+import {
+    DiLinux, DiGithubBadge, DiNodejsSmall, DiMongodb, DiJavascript1,
+    DiNodejs, DiReact, DiVisualstudio
+} from 'react-icons/di';
 import { FiFigma } from 'react-icons/fi';
-import { SiInkscape, SiAdobephotoshop, SiRedux, SiMysql } from 'react-icons/si';
+import { SiInkscape, SiAdobephotoshop, SiRedux, SiFirebase, SiPostman, SiMysql } from 'react-icons/si';
 
-import { ReactComponent as Postman } from './postman.svg'
-import { ReactComponent as Firebase } from './firebase-icon.svg'
-import { ReactComponent as Draw } from './draw-io.svg'
+// import { ReactComponent as Postman } from './postman.svg'
+// import { ReactComponent as Firebase } from './firebase-icon.svg'
+// import { ReactComponent as Draw } from './draw-io.svg'
+
 import Loader from '../../Loader/Loader';
 
 
@@ -25,12 +29,14 @@ const icons = {
         { name: "Figma", icon: <FiFigma /> },
         { name: "Inkscape", icon: <SiInkscape /> },
         { name: "Photoshop", icon: <SiAdobephotoshop /> },
-        { name: "Draw.io diagrams", icon: <Draw /> },
+        { name: "Draw.io diagrams", icon: <FaProjectDiagram /> },
+        // { name: "Draw.io diagrams", icon: <Draw /> },
     ],
     frames: [
         { name: "GitHub", icon: <DiGithubBadge style={{ fontSize: '4em' }} /> },
         { name: "Linux mint", icon: <DiLinux /> },
-        { name: "Postman", icon: <Postman /> },
+        { name: "Postman", icon: <SiPostman/> },
+        // { name: "Postman", icon: <Postman /> },
         { name: "Visual Studio", icon: <DiVisualstudio /> }
     ],
     coding: [
@@ -44,7 +50,8 @@ const icons = {
         { name: "NodeJS", icon: <DiNodejs /> },
         { name: "MongoDB", icon: <DiMongodb /> },
         { name: "MySQL", icon: <SiMysql /> },
-        { name: "Firebase", icon: <Firebase className="firebaseIcon" /> }
+        { name: "Firebase", icon: <SiFirebase /> }
+        // { name: "Firebase", icon: <Firebase className="firebaseIcon" /> }
     ]
 }
 

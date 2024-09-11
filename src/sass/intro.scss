@@ -5,7 +5,7 @@
   grid-template-areas: ". header role  .";
   place-items: center;
   height: 100vh;
-  background: no-repeat center url("https://img.freepik.com/free-vector/gradient-background-wave-minimalist-style_483537-4951.jpg?t=st=1720815062~exp=1720818662~hmac=a026b51b1014af0654aadc5c36464313e4e23084b9e8b229838367be44bd4a82&w=1800");
+  background: no-repeat center url("https://img.freepik.com/free-vector/abstract-simple-white-backdrop-banner-with-blank-space_1017-49801.jpg?t=st=1721939759~exp=1721943359~hmac=f8740672083da0f0708cd0ea0221dfa282b467cdc50b2d27ecaea29395d11f16&w=1800");
   background-size: cover;
 
   @include small {
@@ -59,7 +59,7 @@
       text-transform: uppercase;
       margin: 0;
       position: absolute;
-      transform: translate(10%, -50%);
+      transform: translate(10%, -60%);
       font-weight: 600;
       color: $dimmed-color;
 
