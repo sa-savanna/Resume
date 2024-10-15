@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react'
 import { ProgressBar } from 'react-bootstrap';
 
 
@@ -49,19 +49,19 @@ const TableLang = ({data}) => {
         list = data.list.map((i, key) => (
             <p key={key}>{i.name}</p>
         ))
-        progressBar = data.list.map((i, key) => (
+        progressBar = data.list.map(({isLearning, level}, key) => (
             <ProgressBar
                 key={key}
-                now={calculatePercentOfKnowledge(i.level)}
-                label={i.level}
-                animated={i.isLearning}
+                now={calculatePercentOfKnowledge(level)}
+                label={level}
+                animated={isLearning}
             />
         ))
-        infoTitle = data.info.map((i, key) => (
-            <p key={key}>{i.title}</p>
+        infoTitle = data.info.map(({title}, key) => (
+            <p key={key}>{title}</p>
         ))
-        infoValidity = data.info.map((i, key) => (
-            <p key={key}>{i.valid}</p>
+        infoValidity = data.info.map(({valid}, key) => (
+            <p key={key}>{valid}</p>
         ))
 
     }
@@ -98,4 +98,4 @@ const TableLang = ({data}) => {
     )
 }
 
-export default TableLang
+export default memo(TableLang)

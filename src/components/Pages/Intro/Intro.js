@@ -32,7 +32,7 @@ const Intro = () => {
                 </div>
 
                 <div className='role'>
-                    <h5>junior</h5>
+                    <h5>ReactJS</h5>
                     <h5>web</h5>
                     <h5>developer</h5>
                 </div>

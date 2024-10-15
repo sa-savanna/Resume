@@ -1,18 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useContext } from 'react'
 import { NavLink } from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
-import File from "./Junior React-Developer.pdf"
 import { FaEye } from 'react-icons/fa';
+import { DataContext } from "../context/DataContext"
 
-
+import Modal from './Modal';
 
 const Menu = () => {
-    const [expanded, setExpanded] = useState(false);
+
+    const { cvFile } = useContext(DataContext);
     const clikedToggler = useRef(null)
+
+    const [expanded, setExpanded] = useState(false);
+    const [modal, setModal] = useState(false)
 
     useEffect(() => {
         clikedToggler.current.click()
-        
+
     }, [])
 
     return (
@@ -30,7 +34,13 @@ const Menu = () => {
                     <li><NavLink onClick={() => setExpanded(false)} to="/me">About Me</NavLink></li>
                     <li><NavLink onClick={() => setExpanded(false)} to="/portfolio">Portfolio</NavLink></li>
                     <li><NavLink onClick={() => setExpanded(false)} to="/contact">Contact</NavLink></li>
-                    <li><a className="btn" target="_blank" rel="noopener noreferrer" href={File}><FaEye />View Resume</a></li>
+                    <li onClick={() => setModal(true)} ><FaEye />View Resume</li>
+
+                    {
+                        modal === true && (
+                            <Modal setModal={setModal} resume={cvFile && cvFile} />
+                        )
+                    }
                 </ul>
             </Navbar.Collapse>
 

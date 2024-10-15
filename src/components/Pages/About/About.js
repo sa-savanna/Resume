@@ -9,7 +9,7 @@ import { DataContext } from "../../context/DataContext"
 
 import { BsBootstrap } from 'react-icons/bs';
 import { AiOutlineHtml5 } from 'react-icons/ai';
-import { FaSass, FaProjectDiagram } from 'react-icons/fa';
+import { FaSass, FaProjectDiagram, FaMicrosoft } from 'react-icons/fa';
 import {
     DiLinux, DiGithubBadge, DiNodejsSmall, DiMongodb, DiJavascript1,
     DiNodejs, DiReact, DiVisualstudio
@@ -17,27 +17,22 @@ import {
 import { FiFigma } from 'react-icons/fi';
 import { SiInkscape, SiAdobephotoshop, SiRedux, SiFirebase, SiPostman, SiMysql } from 'react-icons/si';
 
-// import { ReactComponent as Postman } from './postman.svg'
-// import { ReactComponent as Firebase } from './firebase-icon.svg'
-// import { ReactComponent as Draw } from './draw-io.svg'
-
 import Loader from '../../Loader/Loader';
 
 
-const icons = {
+const list = {
     design: [
         { name: "Figma", icon: <FiFigma /> },
         { name: "Inkscape", icon: <SiInkscape /> },
         { name: "Photoshop", icon: <SiAdobephotoshop /> },
         { name: "Draw.io diagrams", icon: <FaProjectDiagram /> },
-        // { name: "Draw.io diagrams", icon: <Draw /> },
     ],
     frames: [
-        { name: "GitHub", icon: <DiGithubBadge style={{ fontSize: '4em' }} /> },
+        { name: "GitHub", icon: <DiGithubBadge /> },
         { name: "Linux mint", icon: <DiLinux /> },
+        { name: "Microsoft", icon: <FaMicrosoft /> },
         { name: "Postman", icon: <SiPostman/> },
-        // { name: "Postman", icon: <Postman /> },
-        { name: "Visual Studio", icon: <DiVisualstudio /> }
+        { name: "Visual Studio", icon: <DiVisualstudio /> },
     ],
     coding: [
         { name: "HTML", icon: <AiOutlineHtml5 /> },
@@ -51,35 +46,35 @@ const icons = {
         { name: "MongoDB", icon: <DiMongodb /> },
         { name: "MySQL", icon: <SiMysql /> },
         { name: "Firebase", icon: <SiFirebase /> }
-        // { name: "Firebase", icon: <Firebase className="firebaseIcon" /> }
     ]
 }
 
-
 const About = () => {
 
-    const { dataAbout, loading } = useContext(DataContext);
+    const { dataAbout, loading, imageUrl } = useContext(DataContext);
     const data = dataAbout
+   
 
     return (
         <div className="container2">
             {loading ? <Loader /> :
                 <>
-                    <TopBar data={data && data.topbar} />
-                    <TableLang data={data && data.languages} />
+                    <TopBar data={data?.topbar} img={imageUrl && imageUrl}/>
+                    <TableLang data={data?.languages} />
 
-                    <Skills icons={icons} />
+                    <Skills icons={list} />
 
                     <div className="profile">
                         <div>
-                            <Education data={data && data.Education} />
+                            <Education data={data?.Education} />
                         </div>
                         <div>
-                            <Experience data={data && data.Experience} />
+                            <Experience data={data?.Experience} />
                         </div>
                     </div>
 
-                    <JumbotronComponent icons={icons} />
+                    <JumbotronComponent icons={list} />
+                    
                 </>
             }
         </div>

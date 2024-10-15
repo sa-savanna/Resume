@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {memo} from 'react'
 import { Col, Row, Jumbotron } from 'react-bootstrap';
 
 const JumbotronComponent = ({ icons }) => {
+
     return (
         <Jumbotron>
             <Row className='d-flex flex-row m-0'>
@@ -10,9 +11,9 @@ const JumbotronComponent = ({ icons }) => {
                 </Col>
                 <Col lg={12} className="p-0">
                     <ul>
-                        {icons.frames.map(y => (
-                            <li key={y.name}>{y.icon}
-                                <span>{y.name}</span>
+                        {icons.frames.map(({name, icon}) => (
+                            <li key={name}>{icon}
+                                <span>{name}</span>
                             </li>
                         ))} 
                     </ul>
@@ -22,4 +23,4 @@ const JumbotronComponent = ({ icons }) => {
     )
 }
 
-export default JumbotronComponent
+export default memo(JumbotronComponent)

@@ -1,37 +1,48 @@
-import React from 'react'
+import React, {memo,  useState } from 'react'
 import { Image } from 'react-bootstrap';
-import ava from '../Ava.JPG';
+// import ava from '../Ava.JPG';
 import Header from '../Header';
-import { FaExternalLinkAlt } from "react-icons/fa";
 
-const TopBar = ({ data }) => {
+const TopBar = ({ data, img }) => {
+
+
+  const [paragraphs] = useState([data?.description])
+
+  let pagraphMe = ''
+  let paragraphPrev = ''
+  let pagraphSoft = ''
+  let paragrapgShift = ''
+
+  if (paragraphs) {
+    pagraphMe = paragraphs.map((par, key) => <p key={key}>{par.me}</p>)
+    paragraphPrev = paragraphs.map((par, key) => <p key={key}>{par.prev}</p>)
+    pagraphSoft = paragraphs.map((par, key) => <p key={key}>{par.soft}< br />{par.thus}</p>)
+    paragrapgShift = paragraphs.map((par, key) => <p key={key}>{par.shift}< br />{par.now}</p>)
+
+  }
 
   return (
     <>
       <div className="topbar">
         <Header
-          header={data && data.header.title}
-          paragraph={data && data.header.paragraph}
-          name={data && data.header.name}
+          header={data?.header.title}
+          paragraph={data?.header.paragraph}
+          name={data?.header.name}
         />
 
         <div className="aboutme">
-          <p>
-            Thanks to my passion for computers, non-stop learning attitude for applications
-            and new technologies, I decided to continue developing my talents in the IT field. <hr />
-
-            I am improving ReactJS skills, <a href="https://www.mongodb.com/mern-stack" target="_blank" rel="noopener noreferrer">MERN stack
-              <sup><FaExternalLinkAlt /></sup>  </a> . <br />
-            - Currently I am learning <b> SQL and Python</b>. <br />
-            - Interested in Data visualizing and 2D/3D design.
-          </p>
-          <p> At the same time, I am learning back-end to grow knowledge in all stages of development.
-          </p>
+          {pagraphMe}
+          {paragraphPrev}
+          {pagraphSoft}
+          <hr />
+          {paragrapgShift}
         </div>
-      </div>
+      </div >
 
       <div className="rectangle">
-        <Image className="photo" src={ava} />
+        {img &&
+          <Image className="photo" src={img} />
+        }
       </div>
     </>
   )
@@ -39,4 +50,4 @@ const TopBar = ({ data }) => {
 }
 
 
-export default TopBar;
+export default memo (TopBar);
