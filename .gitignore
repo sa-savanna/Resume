@@ -4,8 +4,5 @@
 # production
 /build
 
-resume-data.json
-resume-data1.json
-App copy.js
-Portfolio flip.js
-Skills copy.js
+# Distribution directories
+/dist
