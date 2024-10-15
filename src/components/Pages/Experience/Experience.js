@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useLayoutEffect, memo } from 'react'
 import { Button } from 'react-bootstrap';
 import { gsap } from "gsap"
 
@@ -7,11 +7,7 @@ const Experience = ({ data }) => {
 
     let tl = gsap.timeline()
 
-    const toggle = () => {
-        setVisibility(!isVisible);
-    }
-
-    useEffect(() => {
+    useLayoutEffect(() => {
         tl.from(".exp1", .5, {
             scale: 0.5,
             opacity: 0,
@@ -23,42 +19,39 @@ const Experience = ({ data }) => {
 
     return (
         <>
-            <Button variant="primary" block onClick={toggle}> Experience</Button>
+            <Button variant="primary" block onClick={() => setVisibility(!isVisible)}>Experience</Button>
 
             {
                 isVisible &&
                 <ul>
                     {
-                        data && data.sort((a, b) => b.id > a.id ? 1 : -1).map((list, i) => (
-                            <li className='exp1' key={i}>
-                                <div className="timelineMarker"></div>
-                                <div className="timelineInfo">
-                                    <p className="timelineTitle">{list.time}</p>
-                                </div>
-                                <div className="timelineContent">
-                                    <h5>{list.position}</h5>
-                                    <p className="timelineTitle">{list.sector} </p>
+                        data?.sort((a, b) => b.id > a.id ? 1 : -1).map(
+                            ({ id, position, responsibilities, sector, time, location }) => (
+                                <li className='exp1' key={id}>
+                                    <div className="timelineMarker"></div>
+                                    <div className="timelineInfo">
+                                        <p>{time}
+                                            <span>{location}</span>
+                                        </p>
+                                    </div>
 
-                                    {list.skills && list.skills.map(y => (
-                                        <>
-                                            <span><u>{y.name}</u></span>
-                                            <ul>
-                                                {y.responsibilities && y.responsibilities.map(z => (
-                                                    <li>{z}</li>
-                                                ))
-                                                }
-                                            </ul>
-                                            <br />
-                                        </>
-                                    ))
-                                    }
-                                </div>
-                            </li>
-                        ))
+                                    <div className="timelineContent">
+                                        <h5>{position}</h5>
+
+                                        <p className="timelineTitle">{sector} </p>
+                                        <ul>
+                                            {responsibilities?.map((item, key) => (
+                                                <li key={key}>{item}</li>
+                                            ))
+                                            }
+                                        </ul>
+                                    </div>
+                                </li>
+                            ))
                     }
                 </ul>
             }
         </ >
     )
 }
-export default Experience;
+export default memo(Experience);

@@ -9,17 +9,15 @@ import { Gsm, Linkd, Mail } from './contactComponents';
 function Contact() {
     const { dataContact, loading } = useContext(DataContext);
 
-    // console.log(data);
     const data = dataContact
-
 
     return (
         <>
             <div className="inner">
                 <Header
-                    header={data && data.header.title}
-                    paragraph={data && data.header.paragraph}
-                    name={data && data.header.name} />
+                    header={data?.header.title}
+                    paragraph={data?.header.paragraph}
+                    name={data?.header.name} />
                 <div className="wrapper">
                     <Row>
                         <Col md={6}>
@@ -27,13 +25,13 @@ function Contact() {
                         </Col>
                         {loading ? <Loader /> :
                             <Col md={6} className="col-right" >
-                                <h5>{data.city}</h5>
+                                <h5>{data?.city}</h5>
                                 <div className="contact-info">
-                                    <Gsm data={data && data} />
+                                    <Gsm data={data} />
 
-                                    <Mail data={data && data} />
+                                    <Mail data={data} />
 
-                                    <Linkd data={data && data} />
+                                    <Linkd data={data} />
 
                                 </div>
                             </Col>

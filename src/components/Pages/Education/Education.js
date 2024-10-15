@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { memo, useState, useLayoutEffect } from 'react'
 import { Button } from 'react-bootstrap';
 import { gsap } from "gsap"
 
 const Education = ({ data }) => {
     const [isVisible, setVisibility] = useState(false)
-  
+
     let tl = gsap.timeline()
 
-    const toggle = () => {
-        setVisibility(!isVisible);
-    }
-
-    useEffect(() => {
+    useLayoutEffect(() => {
         tl.from(".exp", .5, {
             scale: 0.5,
             opacity: 0,
@@ -23,21 +19,21 @@ const Education = ({ data }) => {
 
     return (
         <>
-            <Button variant="primary" block onClick={toggle}>Education</Button>
+            <Button variant="primary" block onClick={() => setVisibility(!isVisible)}>Education</Button>
             {
                 isVisible &&
                 <ul>
                     {
-                        data && data.sort((a, b) => b.id > a.id ? 1 : -1).map((list, i) => (
-                            <li key={i} className="exp">
+                        data?.sort((a, b) => b.id > a.id ? 1 : -1).map(({ time, instituion, title, subtitle, id }) => (
+                            <li key={id} className="exp">
                                 <div className="timelineInfo">
-                                    <p>{list.time}</p>
+                                    <p>{time}</p>
                                 </div>
                                 <div className="timelineMarker"></div>
                                 <div className="timelineContent">
-                                    <h5>{list.instituion}</h5>
-                                    <p>{list.title}
-                                        <em> {list.subtitle} </em>
+                                    <h5>{instituion}</h5>
+                                    <p>{title}
+                                        <em> {subtitle} </em>
                                     </p>
                                 </div>
                             </li>
@@ -49,4 +45,4 @@ const Education = ({ data }) => {
     )
 }
 
-export default Education
+export default memo(Education)
