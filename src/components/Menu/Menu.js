@@ -38,7 +38,7 @@ const Menu = () => {
 
                     {
                         modal === true && (
-                            <Modal setModal={setModal} resume={cvFile && cvFile} />
+                            <Modal setModal={setModal} file={cvFile && cvFile} />
                         )
                     }
                 </ul>

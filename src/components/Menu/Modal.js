@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Modal = ({ setModal, resume }) => {
+const Modal = ({ setModal, file }) => {
     
     return (
         <>
             <div className='blackshadow'>
                 <div className='custom-modal'>
-                {resume && <iframe src={resume} title='resume' width="100%" height="100%" />}
+                {file && <iframe src={file} title='file' width="100%" height="100%" />}
                     <div className='delete-icon' onClick={() => setModal(false)} >
                         x
                     </div>

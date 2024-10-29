@@ -31,7 +31,7 @@ const list = {
         { name: "GitHub", icon: <DiGithubBadge /> },
         { name: "Linux mint", icon: <DiLinux /> },
         { name: "Microsoft", icon: <FaMicrosoft /> },
-        { name: "Postman", icon: <SiPostman/> },
+        { name: "Postman", icon: <SiPostman /> },
         { name: "Visual Studio", icon: <DiVisualstudio /> },
     ],
     coding: [
@@ -53,18 +53,18 @@ const About = () => {
 
     const { dataAbout, loading, imageUrl } = useContext(DataContext);
     const data = dataAbout
-   
+
 
     return (
-        <div className="container2">
+        <div className="container-about">
             {loading ? <Loader /> :
                 <>
-                    <TopBar data={data?.topbar} img={imageUrl && imageUrl}/>
+                    <TopBar data={data?.topbar} img={imageUrl && imageUrl} />
                     <TableLang data={data?.languages} />
 
                     <Skills icons={list} />
 
-                    <div className="profile">
+                    <div className="history">
                         <div>
                             <Education data={data?.Education} />
                         </div>
@@ -74,7 +74,7 @@ const About = () => {
                     </div>
 
                     <JumbotronComponent icons={list} />
-                    
+
                 </>
             }
         </div>
