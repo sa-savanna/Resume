@@ -92,7 +92,7 @@
           color: $contrast-color;
         }
 
-        @include small {
+        @include medium {
           font-size: 0.8rem;
           line-height: 2.5rem;
         }

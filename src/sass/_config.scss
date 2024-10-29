@@ -12,26 +12,33 @@ $contrast-color: #007bff;
 }
 
 
-@mixin large {
-  @media only screen and (max-width: 767px) {
+@mixin ExLarge { 
+  @media only screen and (max-width: 1280px) {
     @content;
   }
 }
 
-@mixin medium {
-  @media only screen and (max-width: 574px) {
+
+@mixin large {  
+  @media only screen and (max-width: 1024px) {
     @content;
   }
 }
 
-@mixin small {
-  @media only screen and (max-width: 420px) {
+@mixin medium { 
+  @media only screen and (max-width: 768px) {
     @content;
   }
 }
 
-@mixin Exsmall {
-  @media only screen and (max-width: 220px) {
+@mixin small { 
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin Exsmall { 
+  @media only screen and (max-width: 480px) {
     @content;
   }
 }

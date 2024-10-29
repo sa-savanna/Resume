@@ -5,6 +5,8 @@
   "homepage": ".",
   "dependencies": {
     "@babel/plugin-transform-optional-catch-binding": "^7.24.7",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.5.0",
     "axios": "^1.7.2",
     "firebase": "^10.13.2",
     "firebase-tools": "^13.22.0",

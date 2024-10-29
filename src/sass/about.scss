@@ -1,24 +1,32 @@
-.container2 {
+.container-about {
   display: grid;
-  grid-template-areas: "topbar photo""lang photo""skills skills""file file""footer footer";
+  grid-template-areas:
+    "topbar photo"
+    "lang photo"
+    "skills skills"
+    "file file"
+    "footer footer";
   grid-template-columns: 1fr 30%;
   position: relative;
 
   @include medium {
-    grid-template-areas: "photo""topbar""lang""skills""file""footer";
+    grid-template-areas:
+      "photo"
+      "topbar"
+      "lang"
+      "skills"
+      "file"
+      "footer";
     grid-template-columns: 1fr;
   }
 
+  // tobar is in a separate scss
+
+
   .row-skills {
     grid-area: skills;
-    padding: 0;
-    margin-top: 3em;
+    padding-left: 10px;
     text-align: center;
-
-
-    @include large {
-      padding: 5px;
-    }
 
     .headLang {
       color: $background-color;
@@ -48,7 +56,7 @@
         opacity: 0.5;
       }
 
-      @include large {
+      @include medium {
         display: none;
       }
     }
@@ -56,7 +64,7 @@
     .headHided {
       display: none;
 
-      @include large {
+      @include medium {
         display: block;
         margin-bottom: 2em;
         background-color: #e9ecef;
@@ -73,6 +81,11 @@
       width: 100%;
       padding-left: 2em;
 
+      @include small {
+        grid-template-columns: 1fr;
+      }
+
+
       h4 {
         margin-bottom: 2rem;
       }
@@ -86,19 +99,14 @@
         margin-right: 0;
         margin-left: 0;
 
-
         p {
-          font-size: smaller
-        }
-
-
-        @include medium {
-          grid-template-columns: repeat(2, 1fr);
+          font-size: smaller;
         }
 
         @include small {
           grid-template-columns: repeat(2, 1fr);
         }
+
       }
 
       .card-deck.design {
@@ -110,12 +118,7 @@
         margin-left: 0;
 
         p {
-          font-size: smaller
-        }
-
-
-        @include medium {
-          grid-template-columns: 1fr;
+          font-size: smaller;
         }
 
         @include small {
@@ -143,20 +146,11 @@
             height: 35px;
           }
         }
-
-        .firebaseIcon {
-          height: 48px;
-
-          @include small {
-            height: 33px;
-          }
-        }
       }
-
     }
   }
 
-  .profile {
+  .history {
     grid-area: file;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -174,15 +168,14 @@
       margin-bottom: 2rem;
     }
 
-
     ul {
-      line-height: 1.4em;
+      line-height: 1rem;
       list-style: none;
       margin: 0;
       width: 100%;
       padding-left: 2%;
 
-      @include small {
+      @include medium {
         padding-left: 4%;
         padding-right: 5%;
       }
@@ -198,7 +191,6 @@
         .timelineInfo {
           margin: 0 0 0.5em 0;
           white-space: nowrap;
-
 
           span {
             padding-left: 10px;
@@ -223,7 +215,8 @@
             top: 4px;
             left: 0;
             width: 15px;
-            transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+            transition: background-color 0.3s ease-in-out,
+              border 0.3s ease-in-out;
           }
 
           &:after {
@@ -243,7 +236,13 @@
         }
 
         .timelineContent {
-          padding-bottom: 40px;
+          padding-bottom: 20px;
+        
+          @include medium {
+            h5{
+              font-size: 16px;
+            }
+          }
 
           p.timelineTitle {
             color: $header-color;
@@ -257,7 +256,6 @@
             padding-left: 0px;
             padding-right: 6%;
 
-
             @include large {
               padding-left: 0px;
               padding-right: 5%;
@@ -265,11 +263,14 @@
 
             @include small {
               padding-left: 0px;
+              font-size: smaller;
+              line-height: normal;
             }
 
             li {
               list-style: none;
               padding-left: 0px;
+              line-height: normal;
 
               &:before {
                 content: "";
@@ -300,7 +301,12 @@
     .btn-primary {
       transition: all 0.5s ease-in-out;
       background-size: auto 300%;
-      background-image: linear-gradient(to bottom, $contrast-color 0%, #0c00b1 60%, $contrast-color 100%);
+      background-image: linear-gradient(
+        to bottom,
+        $contrast-color 0%,
+        #0c00b1 60%,
+        $contrast-color 100%
+      );
 
       &:focus,
       &:hover {
@@ -308,7 +314,6 @@
       }
     }
   }
-
 
   .jumbotron {
     padding: 2rem 2rem;
@@ -325,12 +330,11 @@
       align-items: center;
       display: flex;
       justify-content: space-around;
-      height: 100%;
+      padding: 10px;
 
       @include medium {
         justify-content: space-between;
         flex-wrap: wrap;
-        padding-left: 0;
       }
 
       li {
@@ -340,21 +344,13 @@
         position: relative;
         padding: 0;
 
-        @include medium {
-          line-height: 2.5;
+        @include small {
+          line-height: 2;
           flex-direction: column;
         }
 
-        &:hover span {
-          visibility: visible;
-        }
-
         span {
-          text-align: center;
-
-          @include easeOut();
-          z-index: 1;
-          visibility: hidden;
+          padding-left: 10px;
         }
 
         svg {

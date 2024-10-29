@@ -5,7 +5,8 @@
   grid-template-areas: ". header role  .";
   place-items: center;
   height: 100vh;
-  background: no-repeat center url("https://img.freepik.com/free-vector/abstract-simple-white-backdrop-banner-with-blank-space_1017-49801.jpg?t=st=1721939759~exp=1721943359~hmac=f8740672083da0f0708cd0ea0221dfa282b467cdc50b2d27ecaea29395d11f16&w=1800");
+  background: no-repeat center
+    url("https://img.freepik.com/free-photo/white-concrete-textured-background_53876-139903.jpg?t=st=1730132501~exp=1730136101~hmac=b1ae16a1f533b6de2f2631d0523cb82523edfe8658c756f93a5ca3b0356da811&w=1380");
   background-size: cover;
 
   @include small {
@@ -49,31 +50,31 @@
         width: 15px;
         transform-origin: bottom;
         border-radius: 50%;
+        transform: translateY(-70px);
       }
     }
 
-
     .surname {
       letter-spacing: 4px;
-      font-size: 4rem;
+      font-size: 3rem;
       text-transform: uppercase;
       margin: 0;
       position: absolute;
       transform: translate(10%, -60%);
       font-weight: 600;
       color: $dimmed-color;
+      max-width: 500px;
 
       @include medium {
-        font-size: 3rem;
+        font-size: 2rem;
       }
 
       @include small {
-        font-size: 2rem !important;
+        font-size: 1rem !important;
       }
 
       @include Exsmall {
-        // transform: translate(10%, -90%);
-        font-size: 1rem !important;
+        font-size: 0.75rem !important;
       }
     }
   }
@@ -92,29 +93,30 @@
       @include medium {
         letter-spacing: 3px;
         line-height: 21px;
-        font-size: 1rem;
+        font-size: 16px;
+      }
+
+      @include small {
+        line-height: 16px;
       }
 
       @include Exsmall {
-        line-height: 16px;
-        font-size: 0.8rem;
+        font-size: 12px;
       }
     }
-
   }
 
   .contact-info {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 10%;
     display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
+    flex-direction: row;
 
     a {
       text-decoration: none;
       color: $primary-color;
       line-height: 2.5rem;
+      padding: 1rem;
 
       svg {
         height: 30px;
@@ -125,10 +127,6 @@
           transform: scale(1.5);
         }
       }
-
-      @include small {
-        padding: 0 1rem;
-      }
     }
 
     @include small {
@@ -138,5 +136,4 @@
       justify-content: center;
     }
   }
-
 }

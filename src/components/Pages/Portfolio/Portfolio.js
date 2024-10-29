@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
-import { Image, Button, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
-import { FaGithub, FaRegEye, FaNode, FaReact } from 'react-icons/fa';
+import { Button, ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
+import { FaRegEye, FaNode, FaReact, FaGithub } from 'react-icons/fa';
 import { FiFigma } from 'react-icons/fi';
 import { DiJavascript1 } from 'react-icons/di';
 import { SiAngularjs } from 'react-icons/si';
@@ -10,15 +10,16 @@ import { DataContext } from "../../context/DataContext"
 import Loader from '../../Loader/Loader';
 
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import Title from './Title';
+import GetImagesFirebase from './GetImagesFirebase';
+
 
 const Portfolio = () => {
 
-    const { dataPortfolio, loading } = useContext(DataContext);
+    const { dataPortfolio, loading, portfolioImagesUrl } = useContext(DataContext);
     const data = dataPortfolio
-    const [sorted, setSorted] = useState(data && data.cards)
+    const [sorted, setSorted] = useState(data?.cards)
     const [valueName] = useState()
-
-
 
     const dataIcons = [
         { name: "JavaScript", icon: <DiJavascript1 /> },
@@ -55,23 +56,12 @@ const Portfolio = () => {
         <>
             <div className="inner">
                 <Header
-                    header={data && data.header.title}
-                    paragraph={data && data.header.paragraph}
-                    name={data && data.header.name} />
+                    header={data?.header.title}
+                    paragraph={data?.header.paragraph}
+                    name={data?.header.name} />
 
                 {/* Title */}
-                <div className="title">
-                    <p>This site is made with <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
-                        React</a> library, without backend, using <a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer">
-                            SASS </a> styling, <a href="https://greensock.com/" target="_blank" rel="noopener noreferrer">
-                            GreenSock </a> animation and <a href="https://reactcommunity.org/react-transition-group/" target="_blank" rel="noopener noreferrer">
-                            React Transition Group.</a>
-                    </p>
-                    <a href='https://github.com/sa-savanna/Resume' target="_blank" rel="noopener noreferrer" data-toggle="tooltip" data-placement="top" title="View code">
-                        <Button variant="warning" size="sm"><FaGithub />View code</Button>
-                    </a>
-                </div>
-
+                <Title data={data} />
 
                 {/* Filtering buttons */}
                 <ToggleButtonGroup
@@ -84,8 +74,8 @@ const Portfolio = () => {
                     <ToggleButton
                         value={"All"}
                         onClick={() => setSorted(data.cards)}>All
-
                     </ToggleButton>
+
                     {
                         dataIcons.map(({ name, icon }) => (
                             <ToggleButton
@@ -99,18 +89,19 @@ const Portfolio = () => {
                     }
                 </ToggleButtonGroup>
 
+                {/* Cards */}
 
-                {/* Projects */}
                 <TransitionGroup className="wrapperCards p-0">
+                {/* <GetImagesFirebase />  */}
                     {loading ? <Loader /> :
-                        sorted && sorted.map(({ img, links, title, list, frame }) => (
+                        sorted && sorted.map(({ links, title, list, frame, name }) => (
                             <CSSTransition
                                 key={title}
                                 timeout={500}
                                 classNames="fade">
                                 <div className="card">
                                     <div className="frame">{findIcon(frame)}</div>
-                                    <Image variant="top" src={require(`${img}`)} />
+                                    <GetImagesFirebase portfolioImagesUrl={portfolioImagesUrl} imageName={name} /> 
                                     <div className="info">
                                         <h5 className="mb-4">{title}</h5>
                                         <ul>
@@ -139,13 +130,11 @@ const Portfolio = () => {
 
                                         </div>
                                     </div>
-                                </div>
+                                </div >
                             </CSSTransition>
                         ))
-
                     }
-                </TransitionGroup>
-                {/* </div > */}
+                </TransitionGroup >
             </div >
         </>
     )

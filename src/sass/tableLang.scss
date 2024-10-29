@@ -1,0 +1,58 @@
+.bodyLang {
+    grid-area: lang;
+    padding-left: 10%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 1em;
+  
+    @include medium {
+      grid-template-columns: 1fr;
+      padding-left: 0;
+    }
+  
+    .headLang {
+      display: block;
+      color: $primary-color;
+      font-size: 1.5rem;
+  
+      @include medium {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 12px;
+        width: 100%;
+        background-color: $dimmed-color;
+        margin: 2em 0;
+        color: $dark-color;
+        font-size: inherit;
+      }
+    }
+  
+    .tableLang {
+      line-height: 16px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0.8em 0;
+  
+      @include medium {
+        width: 60%;
+        margin-left: 9%;
+      }
+  
+      span {
+        display: flex;
+        flex-wrap: wrap;
+        color: $contrast-color;
+  
+        .progress {
+          width: 80%;
+        }
+      }
+  
+      svg {
+        font-size: 10px;
+        margin-right: 5px;
+        color: $dimmed-color;
+      }
+    }
+  }
+  

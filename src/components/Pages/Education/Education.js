@@ -1,4 +1,4 @@
-import React, { memo, useState, useLayoutEffect } from 'react'
+import React, { memo, useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap';
 import { gsap } from "gsap"
 
@@ -7,7 +7,7 @@ const Education = ({ data }) => {
 
     let tl = gsap.timeline()
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         tl.from(".exp", .5, {
             scale: 0.5,
             opacity: 0,

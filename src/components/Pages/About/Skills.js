@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect, memo } from 'react'
+import React, { useRef, useEffect, memo } from 'react'
 import { Col, Row, Card, CardDeck } from 'react-bootstrap';
 import { gsap, Power3 } from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,8 +10,8 @@ const Skills = ({ icons }) => {
     let tl = gsap.timeline()
 
     //Animation
-    useLayoutEffect(() => {
-        tl.from('.card svg', 1, { stagger: 0.15, y: 30, opacity: 0, duration: .2, ease: Power3.easeIn })
+    useEffect(() => {
+        tl.from('.card svg', 1, { stagger: 0.15, y: 30, opacity: 0, duration: .1, ease: Power3.easeIn })
             .from('.card p', .8, { stagger: 0.15, scale: 0, ease: Power3.easeIn }, "-=2")
         gsap.to(skill, 0, { css: { opacity: 1 } })
 

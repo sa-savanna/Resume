@@ -10,11 +10,17 @@ const Intro = () => {
 
     useEffect(() => {
 
-        var tl = gsap.timeline({ repeat: -1 });
+        var tl = gsap.timeline({ repeat: -1, yoyo: true });
+        var ease = Circ.easeIn;
 
-        tl.to(".bounce", .1, { transformOrigin: "50% 100%", scaleY: 0.35, yoyo: true, repeat: 1 })
-            .to(".bounce", .75, { y: -48, ease: Circ.easeOut, yoyo: true, repeat: 1 });
-
+        tl.to(".bounce", .50, { y: 0, ease: ease })
+            .to(".bounce", .10, {
+                scaleY: 0.6,
+                transformOrigin: 'center bottom',
+                borderBottomLeftRadius: '40%',
+                borderBottomRightRadius: '40%',
+                ease: ease
+            }, '-=.05')
     }, [])
 
 
@@ -28,7 +34,6 @@ const Intro = () => {
                     <h1 className='header-me'>I am</h1>
                     <h1 className='header-me'>anna</h1>
                     <p className='surname'>savchenko</p>
-
                 </div>
 
                 <div className='role'>

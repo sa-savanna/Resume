@@ -1,6 +1,5 @@
 import React, {memo,  useState } from 'react'
 import { Image } from 'react-bootstrap';
-// import ava from '../Ava.JPG';
 import Header from '../Header';
 
 const TopBar = ({ data, img }) => {

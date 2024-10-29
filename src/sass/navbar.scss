@@ -10,7 +10,7 @@
     display: none;
     margin-bottom: 0;
 
-    @include medium {
+    @include small {
       display: block;
       margin-right: 0.25em;
 
@@ -20,9 +20,10 @@
     }
   }
 
-  @include medium {
+  @include small {
     .navbar-collapse {
       background-color: #ffffffba;
+      padding: 10px;
       box-shadow: -1px 4px 7px 0px #adb5bd;
     }
   }
