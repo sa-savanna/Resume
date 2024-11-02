@@ -1,3 +1,5 @@
+@use "config";
+
 .navbar {
   display: grid;
   justify-content: end;
@@ -6,21 +8,7 @@
   z-index: 3;
   right: 0;
 
-  .navbar-toggler {
-    display: none;
-    margin-bottom: 0;
-
-    @include small {
-      display: block;
-      margin-right: 0.25em;
-
-      &-icon {
-        background-image: url(../components/Menu/controls.svg);
-      }
-    }
-  }
-
-  @include small {
+  @include config.small {
     .navbar-collapse {
       background-color: #ffffffba;
       padding: 10px;
@@ -32,8 +20,8 @@
     text-align: right;
     padding-top: 0.5rem;
     padding-left: 0;
-    transition-duration: 0.4s;
     list-style: none;
+    transition-duration: 0.4s;
 
     li {
       font-size: 1rem;
@@ -48,19 +36,18 @@
       a {
         display: inline-block;
         padding: 0.4em 1em;
-        border-radius: 0.25em;
-        @include easeOut();
-        color: $dark-color;
+        color: config.$dark-color;
         text-decoration: none;
         font-weight: 200;
+        @include config.easeOut();
 
         &:after {
           content: "";
           display: block;
           width: 0;
           height: 2px;
-          background: $primary-color;
-          @include easeOut();
+          background: config.$primary-color;
+          @include config.easeOut();
         }
 
         &:hover:after {
@@ -105,6 +92,16 @@
           right: -15px;
         }
       }
+    }
+  }
+
+  .navbar-toggler {
+    display: none;
+    margin-bottom: 0;
+
+    @include config.small {
+      display: block;
+      margin-right: 0.25em;
     }
   }
 }

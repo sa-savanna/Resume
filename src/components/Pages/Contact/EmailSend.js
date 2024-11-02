@@ -12,7 +12,7 @@ const EmailSend = () => {
         message: ""
     });
 
-    const handleOnChange = event => {
+    const handleEmailChange = event => {
         event.persist();
         setInputs(prev => ({
             ...prev,
@@ -56,7 +56,6 @@ const EmailSend = () => {
 
     function onChange(value) {
         console.log("Captcha value:", value);
-
     }
 
 
@@ -65,15 +64,16 @@ const EmailSend = () => {
             <Row className='mr-0'>
                 <Col md={6}>
                     <Form.Group >
-                        <Form.Label htmlFor="email">Email</Form.Label>
+                        <Form.Label htmlFor="email">Your Email</Form.Label>
                         <Form.Control
                             className="input-contact"
                             id="email"
                             name="email"
                             type="email"
-                            onChange={handleOnChange}
+                            onChange={handleEmailChange}
                             value={inputs.email}
                             required="required"
+                            autoComplete='email'
                         />
                     </Form.Group>
 
@@ -88,7 +88,7 @@ const EmailSend = () => {
                             name="subject"
                             type="text"
                             required="required"
-                            onChange={handleOnChange}
+                            onChange={handleEmailChange}
                             value={inputs.subject}
                         />
                     </Form.Group>
@@ -104,7 +104,7 @@ const EmailSend = () => {
                             name="message"
                             as="textarea"
                             rows="3"
-                            onChange={handleOnChange}
+                            onChange={handleEmailChange}
                             value={inputs.message}
                             required="required"
                         />
@@ -116,7 +116,7 @@ const EmailSend = () => {
                     <p>Please verify <MdArrowDownward /> </p>
                     <ReCAPTCHA
                         style={{ width: "150px" }}
-                        sitekey="6LegBsMZAAAAAD3CnoJq8ttc7PGrZm7OOF9VaEdS"
+                        sitekey={process.env.REACT_APP_SITE_KEY}
                         onChange={onChange}
                     />
                     <Button

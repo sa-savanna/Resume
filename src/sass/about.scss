@@ -1,3 +1,6 @@
+@use "config";
+
+
 .container-about {
   display: grid;
   grid-template-areas:
@@ -9,7 +12,7 @@
   grid-template-columns: 1fr 30%;
   position: relative;
 
-  @include medium {
+  @include config.medium {
     grid-template-areas:
       "photo"
       "topbar"
@@ -29,11 +32,11 @@
     text-align: center;
 
     .headLang {
-      color: $background-color;
+      color: config.$background-color;
       font-size: 3rem;
       font-weight: 500;
       display: block;
-      background-color: $primary-color;
+      background-color: config.$primary-color;
       height: 100%;
 
       padding: 80px 0;
@@ -49,14 +52,14 @@
         transform: rotateX(180deg);
         perspective: 200px;
         line-height: 1.1;
-        background: linear-gradient(0deg, $background-color 0, transparent 90%);
+        background: linear-gradient(0deg, config.$background-color 0, transparent 90%);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
         opacity: 0.5;
       }
 
-      @include medium {
+      @include config.medium {
         display: none;
       }
     }
@@ -64,7 +67,7 @@
     .headHided {
       display: none;
 
-      @include medium {
+      @include config.medium {
         display: block;
         margin-bottom: 2em;
         background-color: #e9ecef;
@@ -81,7 +84,7 @@
       width: 100%;
       padding-left: 2em;
 
-      @include small {
+      @include config.small {
         grid-template-columns: 1fr;
       }
 
@@ -103,7 +106,7 @@
           font-size: smaller;
         }
 
-        @include small {
+        @include config.small {
           grid-template-columns: repeat(2, 1fr);
         }
 
@@ -121,7 +124,7 @@
           font-size: smaller;
         }
 
-        @include small {
+        @include config.small {
           grid-template-columns: 1fr;
         }
       }
@@ -129,7 +132,7 @@
       .card {
         align-items: center;
         border: none;
-        color: $header-color;
+        color: config.$header-color;
         margin-right: 0;
         margin-left: 0;
         margin-bottom: 1em;
@@ -138,9 +141,9 @@
         svg {
           display: block;
           font-size: 3.1rem;
-          color: $primary-color;
+          color: config.$primary-color;
 
-          @include small {
+          @include config.small {
             font-size: 2rem;
             width: 35px;
             height: 35px;
@@ -157,7 +160,7 @@
     grid-gap: 5px;
     margin-top: 1rem;
 
-    @include medium {
+    @include config.medium {
       grid-area: file;
       display: grid;
       grid-template-columns: 1fr;
@@ -175,7 +178,7 @@
       width: 100%;
       padding-left: 2%;
 
-      @include medium {
+      @include config.medium {
         padding-left: 4%;
         padding-right: 5%;
       }
@@ -205,7 +208,7 @@
           width: 15px;
 
           &:before {
-            background-color: $contrast-color;
+            background-color: config.$contrast-color;
             border: 3px solid transparent;
             border-radius: 100%;
             content: "";
@@ -238,14 +241,14 @@
         .timelineContent {
           padding-bottom: 20px;
         
-          @include medium {
+          @include config.medium {
             h5{
               font-size: 16px;
             }
           }
 
           p.timelineTitle {
-            color: $header-color;
+            color: config.$header-color;
 
             &:last-child {
               margin-bottom: 0;
@@ -256,12 +259,12 @@
             padding-left: 0px;
             padding-right: 6%;
 
-            @include large {
+            @include config.large {
               padding-left: 0px;
               padding-right: 5%;
             }
 
-            @include small {
+            @include config.small {
               padding-left: 0px;
               font-size: smaller;
               line-height: normal;
@@ -275,7 +278,7 @@
               &:before {
                 content: "";
                 display: inline-block;
-                background-color: $primary-color;
+                background-color: config.$primary-color;
                 width: 5px;
                 height: 5px;
                 border-radius: 50%;
@@ -291,7 +294,7 @@
           .timelineMarker {
             &:before {
               background: transparent;
-              border: 3px solid $contrast-color;
+              border: 3px solid config.$contrast-color;
             }
           }
         }
@@ -302,10 +305,8 @@
       transition: all 0.5s ease-in-out;
       background-size: auto 300%;
       background-image: linear-gradient(
-        to bottom,
-        $contrast-color 0%,
-        #0c00b1 60%,
-        $contrast-color 100%
+        to bottom, config.$contrast-color 0%,
+        #0c00b1 60%, config.$contrast-color 100%
       );
 
       &:focus,
@@ -332,7 +333,7 @@
       justify-content: space-around;
       padding: 10px;
 
-      @include medium {
+      @include config.medium {
         justify-content: space-between;
         flex-wrap: wrap;
       }
@@ -344,7 +345,7 @@
         position: relative;
         padding: 0;
 
-        @include small {
+        @include config.small {
           line-height: 2;
           flex-direction: column;
         }
@@ -355,9 +356,9 @@
 
         svg {
           font-size: 3.5rem;
-          color: $dark-color;
+          color: config.$dark-color;
 
-          @include medium {
+          @include config.medium {
             font-size: 3rem;
             padding: 0;
           }

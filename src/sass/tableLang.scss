@@ -1,3 +1,5 @@
+@use "config";
+
 .bodyLang {
     grid-area: lang;
     padding-left: 10%;
@@ -5,24 +7,24 @@
     grid-template-columns: repeat(2, 1fr);
     margin-top: 1em;
   
-    @include medium {
+    @include config.medium {
       grid-template-columns: 1fr;
       padding-left: 0;
     }
   
     .headLang {
       display: block;
-      color: $primary-color;
+      color: config.$primary-color;
       font-size: 1.5rem;
   
-      @include medium {
+      @include config.medium {
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 12px;
         width: 100%;
-        background-color: $dimmed-color;
+        background-color: config.$dimmed-color;
         margin: 2em 0;
-        color: $dark-color;
+        color: config.$dark-color;
         font-size: inherit;
       }
     }
@@ -33,7 +35,7 @@
       grid-template-columns: repeat(2, 1fr);
       margin: 0.8em 0;
   
-      @include medium {
+      @include config.medium {
         width: 60%;
         margin-left: 9%;
       }
@@ -41,7 +43,7 @@
       span {
         display: flex;
         flex-wrap: wrap;
-        color: $contrast-color;
+        color: config.$contrast-color;
   
         .progress {
           width: 80%;
@@ -51,7 +53,7 @@
       svg {
         font-size: 10px;
         margin-right: 5px;
-        color: $dimmed-color;
+        color: config.$dimmed-color;
       }
     }
   }

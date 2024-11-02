@@ -43,7 +43,6 @@ const Menu = () => {
                     }
                 </ul>
             </Navbar.Collapse>
-
         </Navbar >
     )
 }

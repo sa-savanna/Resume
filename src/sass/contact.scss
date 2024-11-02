@@ -1,3 +1,5 @@
+@use "config";
+
 .row {
   // margin-left: 0;
 
@@ -24,7 +26,7 @@
       background-color: transparent;
       z-index: 2;
       font-size: 14px;
-      color: $header-color;
+      color: config.$header-color;
     }
   }
 
@@ -36,10 +38,10 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 500;
-    border-color: $primary-color;
+    border-color: config.$primary-color;
     transition: all 0.5s ease-in-out;
     background-size: 300% auto;
-    background-image: linear-gradient(to right, $primary-color 0%, #fc6338 60%, $primary-color 100%);
+    background-image: linear-gradient(to right, config.$primary-color 0%, #fc6338 60%, config.$primary-color 100%);
 
     &:focus,
     &:hover {
@@ -63,7 +65,7 @@
         text-align: center;
         line-height: 33px;
         margin-right: 10px;
-        color: $primary-color;
+        color: config.$primary-color;
         font-size: 1.3rem;
         transition: transform 0.5s ease;
 
@@ -89,10 +91,10 @@
 
         sup svg {
           width: 0.7rem;
-          color: $contrast-color;
+          color: config.$contrast-color;
         }
 
-        @include medium {
+        @include config.medium {
           font-size: 0.8rem;
           line-height: 2.5rem;
         }
@@ -104,7 +106,7 @@
     }
   }
 
-  @include small {
+  @include config.small {
     .col-md-6 {
       width: 96vw;
     }

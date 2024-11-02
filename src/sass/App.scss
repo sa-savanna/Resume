@@ -1,21 +1,20 @@
-@import "config";
-@import "navbar";
-@import "intro";
-@import "about";
-@import "portfolio";
-@import "contact";
-@import "topbar";
-@import "tableLang";
-@import "loader";
-
+@use "config";
+@use "navbar";
+@use "intro";
+@use "about";
+@use "portfolio";
+@use "contact";
+@use "topbar";
+@use "tableLang";
+@use "loader";
 
 html,
 body {
   height: 100%;
   font-family: "Poppins", sans-serif;
   line-height: 1.8;
-  background-color: $background-color;
-  color: $dark-color;
+  background-color: config.$background-color;
+  color: config.$dark-color;
 }
 
 .container-fluid {
@@ -23,7 +22,7 @@ body {
   overflow: hidden;
 }
 a {
-  @include easeOut();
+  @include config.easeOut();
   color: inherit;
 }
 
@@ -39,11 +38,11 @@ h1,
 h2,
 h3,
 h4 {
-  color: $header-color;
+  color: config.$header-color;
 }
 
 h5 {
-  color: $primary-color;
+  color: config.$primary-color;
 }
 
 .text-uppercase {
