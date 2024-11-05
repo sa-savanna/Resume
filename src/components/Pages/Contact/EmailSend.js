@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import { Form, Col, Row, Button, Alert } from 'react-bootstrap'
 import ReCAPTCHA from "react-google-recaptcha";
 import { MdArrowDownward } from 'react-icons/md';
@@ -6,13 +6,14 @@ import Axios from 'axios';
 
 const EmailSend = () => {
 
+
     const [inputs, setInputs] = useState({
         email: "",
         subject: "",
         message: ""
     });
 
-    const handleEmailChange = event => {
+    const handleInputChange = event => {
         event.persist();
         setInputs(prev => ({
             ...prev,
@@ -30,6 +31,7 @@ const EmailSend = () => {
             submitting: false,
             status: { ok, msg }
         });
+
         if (ok) {
             form.reset();
         }
@@ -42,7 +44,7 @@ const EmailSend = () => {
         setServerState({ submitting: true });
         Axios({
             method: "post",
-            url: "https://formspree.io/xvownjqz",
+            url: "https://formspree.io/f/xdkognye",
             data: new FormData(form)
         })
             .then(r => {
@@ -51,10 +53,9 @@ const EmailSend = () => {
             .catch(r => {
                 handleServerResponse(false, r.response.data.error, form);
             });
-
     };
 
-    function onChange(value) {
+    const onCaptchaChange = (value) => {
         console.log("Captcha value:", value);
     }
 
@@ -70,7 +71,7 @@ const EmailSend = () => {
                             id="email"
                             name="email"
                             type="email"
-                            onChange={handleEmailChange}
+                            onChange={handleInputChange}
                             value={inputs.email}
                             required="required"
                             autoComplete='email'
@@ -88,7 +89,7 @@ const EmailSend = () => {
                             name="subject"
                             type="text"
                             required="required"
-                            onChange={handleEmailChange}
+                            onChange={handleInputChange}
                             value={inputs.subject}
                         />
                     </Form.Group>
@@ -104,7 +105,7 @@ const EmailSend = () => {
                             name="message"
                             as="textarea"
                             rows="3"
-                            onChange={handleEmailChange}
+                            onChange={handleInputChange}
                             value={inputs.message}
                             required="required"
                         />
@@ -113,12 +114,19 @@ const EmailSend = () => {
                 </Col>
 
                 <Col md={12}>
-                    <p>Please verify <MdArrowDownward /> </p>
-                    <ReCAPTCHA
-                        style={{ width: "150px" }}
-                        sitekey={process.env.REACT_APP_SITE_KEY}
-                        onChange={onChange}
-                    />
+                    {
+                        !serverState.submitting &&
+                        <>
+                            <p>Please verify <MdArrowDownward /> </p>
+                            <ReCAPTCHA
+                                style={{ width: "150px" }}
+                                sitekey={process.env.REACT_APP_SITE_KEY}
+                                onChange={onCaptchaChange}
+                            />
+                        </>
+                    }
+
+
                     <Button
                         className="d-inline-block btn btn-box"
                         variant="warning"

@@ -16,8 +16,8 @@ export const Gsm = ({ data }) => {
 export const Mail = ({ data }) => {
     return (
         <div>
-            <a href={`mailto:${data?.email}`} target='blank' rel="noopener noreferrer">
-                <FaAt /> <span> E-mail me</span> </a>
+            <a href={`mailto: ${data?.email}`} target='blank' rel="noopener noreferrer" title="savanna.be.ua@gmail.com">
+                <FaAt /> <span>Email me</span> </a>
         </div>
     )
 };
