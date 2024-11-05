@@ -120,7 +120,7 @@ const EmailSend = () => {
                             <p>Please verify <MdArrowDownward /> </p>
                             <ReCAPTCHA
                                 style={{ width: "150px" }}
-                                sitekey={process.env.REACT_APP_SITE_KEY}
+                                sitekey="6Ld3z3QqAAAAAFIb_Iutrl_A0iBwEouR8MtGvMlC"
                                 onChange={onCaptchaChange}
                             />
                         </>
