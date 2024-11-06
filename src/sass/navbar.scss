@@ -32,7 +32,7 @@
       text-transform: capitalize;
       list-style-type: none;
       padding-left: 0;
-
+      
       a {
         display: inline-block;
         padding: 0.4em 1em;
@@ -64,18 +64,24 @@
       position: fixed;
       top: 0;
       left: 0;
-      background-color: rgba(0, 0, 0, 0.7);
+      right: 0;
+      bottom: 0;
+      background-color: config.$dark-color 70%;
       display: flex;
       justify-content: center;
       align-items: center;
-
+      z-index: 70;
+      cursor: pointer;
+      overflow: auto;
+      
       .custom-modal {
-        width: 70%;
+        position: absolute;        
+        width: 60%;
         height: 80%;
         background-color: white;
-        position: relative;
+        z-index: 80;
 
-        .delete-icon {
+        .close_btn {
           width: 25px;
           height: 25px;
           border-radius: 50%;
@@ -90,6 +96,8 @@
           position: absolute;
           top: -15px;
           right: -15px;
+          z-index: 90;
+          overflow: auto;
         }
       }
     }

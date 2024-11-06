@@ -34,7 +34,7 @@ const Menu = () => {
                     <li><NavLink onClick={() => setExpanded(false)} to="/me">About Me</NavLink></li>
                     <li><NavLink onClick={() => setExpanded(false)} to="/portfolio">Portfolio</NavLink></li>
                     <li><NavLink onClick={() => setExpanded(false)} to="/contact">Contact</NavLink></li>
-                    <li onClick={() => setModal(true)} ><FaEye />View Resume</li>
+                    <li><NavLink onClick={() => setModal(true)} ><FaEye />View Resume</NavLink></li>
 
                     {
                         modal === true && (
