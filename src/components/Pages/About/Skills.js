@@ -64,7 +64,7 @@ const Skills = ({ icons }) => {
                 </div>
                 <div>
                     <h4>Design</h4>
-                    <CardDeck className="design" ref={el => skill = el}>
+                    <CardDeck className="design" >
                         {iconsDesign}
                     </CardDeck>
                 </div>
