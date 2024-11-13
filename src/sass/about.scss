@@ -30,8 +30,9 @@
     grid-area: skills;
     padding-left: 10px;
     text-align: center;
+    margin-top: 2em;
 
-    .headLang {
+    .headSkills {
       color: config.$background-color;
       font-size: 3rem;
       font-weight: 500;
@@ -70,7 +71,7 @@
       @include config.medium {
         display: block;
         margin-bottom: 2em;
-        background-color: #e9ecef;
+        background-color: config.$primary-color;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 12px;

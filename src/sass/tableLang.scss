@@ -1,60 +1,70 @@
 @use "config";
 
 .bodyLang {
-    grid-area: lang;
-    padding-left: 10%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 1em;
-  
+  grid-area: lang;
+  padding-left: 10%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include config.medium {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+  }
+
+  .header {
+    display: block;
+    color: config.$primary-color;
+    font-size: 1.5rem;
+    margin-top: 0;
+
     @include config.medium {
-      grid-template-columns: 1fr;
-      padding-left: 0;
-    }
-  
-    .headLang {
-      display: block;
-      color: config.$primary-color;
-      font-size: 1.5rem;
-  
-      @include config.medium {
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 12px;
-        width: 100%;
-        background-color: config.$dimmed-color;
-        margin: 2em 0;
-        color: config.$dark-color;
-        font-size: inherit;
-      }
-    }
-  
-    .tableLang {
-      line-height: 16px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      margin: 0.8em 0;
-  
-      @include config.medium {
-        width: 60%;
-        margin-left: 9%;
-      }
-  
-      span {
-        display: flex;
-        flex-wrap: wrap;
-        color: config.$contrast-color;
-  
-        .progress {
-          width: 80%;
-        }
-      }
-  
-      svg {
-        font-size: 10px;
-        margin-right: 5px;
-        color: config.$dimmed-color;
-      }
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 12px;
+      width: 100%;
+      background-color: config.$primary-color;
+      margin: 2em 0;
+      color: config.$dark-color;
+      font-size: inherit;
     }
   }
-  
+
+  .table {
+    line-height: 16px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin: 0.8em 0;
+
+    @include config.medium {
+      width: 60%;
+      margin-left: 9%;
+    }
+
+    @include config.small {
+      width: 100%;
+      margin-left: 9%;
+    }
+
+    .progressBar {
+      display: flex;
+      flex-wrap: wrap;
+      color: config.$contrast-color;
+
+      .progress {
+        width: 80%;
+      }
+    }
+    .legend {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-column-gap: 5px;
+      width: 80%;
+    }
+
+    svg {
+      font-size: 10px;
+      margin-right: 5px;
+      color: config.$dimmed-color;
+    }
+  }
+}

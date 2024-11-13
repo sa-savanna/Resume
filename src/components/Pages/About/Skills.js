@@ -1,12 +1,13 @@
-import React, { useRef, useEffect, memo } from 'react'
-import { Col, Row, Card, CardDeck } from 'react-bootstrap';
+import React, { createRef, useEffect, memo } from 'react'
+import { Col, Row, CardDeck } from 'react-bootstrap';
 import { gsap, Power3 } from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ShowIcon from './ShowIcon';
 gsap.registerPlugin(ScrollTrigger);
 
 
 const Skills = ({ icons }) => {
-    let skill = useRef(null)
+    let skill = createRef(null)
     let tl = gsap.timeline()
 
     //Animation
@@ -23,28 +24,18 @@ const Skills = ({ icons }) => {
             toggleActions: "restart none none restart"
         })
 
-    }, [tl])
+    }, [skill, tl])
 
 
     let iconsCoding = []
     let iconsDesign = []
-    
-    if (icons){
-        iconsCoding = icons.coding.map(({name, icon}) => (
-            <Card key={name} >
-                {icon}
-                <Card.Body>
-                    <Card.Text>{name}</Card.Text>
-                </Card.Body>
-            </Card>
+
+    if (icons) {
+        iconsCoding = icons.coding.map(({ name, icon }) => (
+            <ShowIcon name={name} icon={icon} />
         ))
-        iconsDesign = icons.design.map(({name, icon}) => (
-            <Card key={name}>
-                {icon}
-                <Card.Body>
-                    <Card.Text>{name}</Card.Text>
-                </Card.Body>
-            </Card>
+        iconsDesign = icons.design.map(({ name, icon }) => (
+            <ShowIcon name={name} icon={icon} />
         ))
     }
 
@@ -52,7 +43,7 @@ const Skills = ({ icons }) => {
     return (
         <Row className="row-skills">
             <Col lg={3} md={3} className="p-0">
-                <span data-text="Skills" className="headLang">Skills</span>
+                <span data-text="Skills" className="headSkills">Skills</span>
                 <span className='headHided'>SKILLS</span>
             </Col>
             <Col lg={9} md={9} className="icons" >
