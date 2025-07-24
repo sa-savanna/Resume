@@ -1,11 +1,11 @@
-import React, { useState} from 'react'
+import React, { useState, createRef } from 'react'
 import { Form, Col, Row, Button, Alert } from 'react-bootstrap'
 import ReCAPTCHA from "react-google-recaptcha";
 import { MdArrowDownward } from 'react-icons/md';
 import Axios from 'axios';
 
 const EmailSend = () => {
-
+    const recaptcha = createRef()
 
     const [inputs, setInputs] = useState({
         email: "",
@@ -41,6 +41,8 @@ const EmailSend = () => {
     const handleOnSubmit = e => {
         e.preventDefault();
         const form = e.target;
+
+
         setServerState({ submitting: true });
         Axios({
             method: "post",
@@ -53,6 +55,9 @@ const EmailSend = () => {
             .catch(r => {
                 handleServerResponse(false, r.response.data.error, form);
             });
+
+
+
     };
 
     const onCaptchaChange = (value) => {
@@ -114,24 +119,20 @@ const EmailSend = () => {
                 </Col>
 
                 <Col md={12}>
-                    {
-                        !serverState.submitting &&
                         <>
                             <p>Please verify <MdArrowDownward /> </p>
                             <ReCAPTCHA
-                                style={{ width: "150px" }}
-                                sitekey="6Ld3z3QqAAAAAFIb_Iutrl_A0iBwEouR8MtGvMlC"
+                                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
                                 onChange={onCaptchaChange}
                             />
                         </>
-                    }
-
 
                     <Button
                         className="d-inline-block btn btn-box"
                         variant="warning"
                         type="submit"
                         disabled={serverState.submitting}
+                        ref={recaptcha}
                     >
                         Send
                     </Button>
